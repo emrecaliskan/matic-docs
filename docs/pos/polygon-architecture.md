@@ -1,26 +1,29 @@
 ---
 id: polygon-architecture
-title: Overview
-description: The architecture of Polygon
+title: The Architecture of Polygon
+description: The Architecture of Polygon
 keywords:
   - architecture
   - layers
   - polygon
+  - matic
+  - docs
+  - research
 image: https://matic.network/banners/matic-network-16x9.png
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## Polygon
+# **The Architecture of Polygon**
 
-Polygon is a blockchain application platform that provides hybrid Proof-of-Stake and Plasma-enabled sidechains.
+**Polygon** is a blockchain application platform that provides hybrid Proof-of-Stake and Plasma-enabled sidechains.
 
 Architecturally, the beauty of Polygon is its elegant design, which features a generic validation layer separated from varying execution environments like Plasma enabled chains, full-blown EVM sidechains, and in the future, other Layer 2 approaches such as Optimistic Rollups.
 
 The Polygon PoS Network has a three-layer architecture:
 
-* Ethereum layer — a set of contracts on the Ethereum mainnet.
-* Heimdall layer — a set of proof-of-stake Heimdall nodes running parallel to the Ethereum mainnet, monitoring the set of staking contracts deployed on the Ethereum mainnet and committing the Polygon Network checkpoints to the Ethereum mainnet. Heimdall is based on Tendermint.
-* Bor layer — a set of block-producing Bor nodes shuffled by Heimdall nodes. Bor is based on Go Ethereum.
+* **Ethereum layer** — a set of contracts on the Ethereum mainnet.
+* **Heimdall layer** — a set of proof-of-stake Heimdall nodes running parallel to the Ethereum mainnet, monitoring the set of staking contracts deployed on the Ethereum mainnet and committing the Polygon Network checkpoints to the Ethereum mainnet. Heimdall is based on Tendermint.
+* **Bor layer** — a set of block-producing Bor nodes shuffled by Heimdall nodes. Bor is based on Go Ethereum.
 
 <img src={useBaseUrl("img/staking/architecture.png")} />
 
@@ -35,7 +38,7 @@ enable an interoperable decentralized Layer 2 blockchain platform based on commu
 
 <img src={useBaseUrl("img/matic/Architecture.png")} />
 
-## Staking Contracts
+## **Staking Contracts**
 
 To enable the [Proof of Stake (PoS)](docs/home/polygon-basics/what-is-proof-of-stake) mechanism on Polygon,
 the system employs a set of [staking](/docs/maintain/glossary#staking) management contracts on the Ethereum mainnet.
@@ -48,7 +51,7 @@ The staking contracts implement the following features:
 
 The PoS mechanism also acts as a mitigation to the data unavailability problem for the Polygon sidechains.
 
-## Heimdall
+## **Heimdall**
 
 Heimdall is the proof of stake validation layer that handles the aggregation of blocks produced
 by [Bor](/docs/maintain/glossary#bor) into a Merkle tree and publishes the Merkle root periodically to the
@@ -72,7 +75,7 @@ An overview of the process:
 
 More details on Heimdall are available on the [Heimdall architecture](/docs/pos/heimdall/overview) guide.
 
-### Bor
+## **Bor**
 
 Bor is Polygon's sidechain block producer — the entity responsible for aggregating transactions into blocks.
 
@@ -89,7 +92,7 @@ the Merkle tree hash of a set of blocks on Bor is committed to Ethereum periodic
 
 More details are available on the [Bor architecture](/docs/pos/bor/overview) guide.
 
-### Resources
+## **Resources**
 
 * [Bor Architecture](https://forum.polygon.technology/t/matic-system-overview-bor/9123)
 * [Heimdall Architecture](https://forum.polygon.technology/t/matic-system-overview-heimdall/8323)

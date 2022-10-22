@@ -1,8 +1,8 @@
 ---
 id: port-management
-title: Technical infrastructure for nodes
+title: Technical Infrastructure For Nodes
 sidebar_label: Port Management
-description: "List of default ports used across Polygon nodes."
+description: List of default ports used across Polygon nodes
 keywords:
   - docs
   - polygon
@@ -10,14 +10,16 @@ keywords:
   - port
   - port management
   - infrastructure
-
+  - default ports
 slug: port-management
 image: https://matic.network/banners/matic-network-16x9.png 
 ---
 
+# **Technical Infrastructure For Nodes**
+
 Here is a list of default ports used across Polygon nodes:
 
-## Bor
+## **Bor**
 
 | ﻿Name                   | Port  | Tags                      | description                                                                                                    |
 |------------------------|-------|---------------------------|----------------------------------------------------------------------------------------------------------------|
@@ -30,7 +32,7 @@ Here is a list of default ports used across Polygon nodes:
 | Pprof server           | 7071  | internal, monitoring      | Pprof server to collect metrics from Bor                                                                       |
 | UDP discovery          | 30301 | can-be-public, internal   | Bootnode default port (for peer discovery)                                                                     |
 
-## Heimdall
+## **Heimdall**
 
 | ﻿Name                   | Port  | Tags                      | description                                                                                                    |
 |------------------------|-------|---------------------------|----------------------------------------------------------------------------------------------------------------|

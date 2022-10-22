@@ -1,12 +1,16 @@
 ---
 id: transactions
 title: Transactions
-description: What are transactions and when they are used.
+description: What are transactions and when they are used
 keywords:
   - docs
   - matic
+  - polygon
+  - Transactions
 image: https://matic.network/banners/matic-network-16x9.png 
 ---
+
+# **Transactions**
 
 Transactions are comprised of metadata held in [contexts](https://docs.cosmos.network/master/core/context.html) and [messages](https://docs.cosmos.network/master/building-modules/messages-and-queries.html) that trigger state changes within a module, through the module's [Handler](https://docs.cosmos.network/master/building-modules/handler.html).
 
@@ -14,7 +18,7 @@ When users want to interact with an application and make state changes (e.g. sen
 
 ## **Type Definition**
 
-Transaction objects are SDK types that implement the `Tx` interface
+Transaction objects are SDK types that implement the `Tx` interface.
 
 ```go
 type Tx interface {

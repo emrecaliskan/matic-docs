@@ -11,6 +11,7 @@ keywords:
   - efficiency
   - develop
   - zkEVM
+  - connect with zkEVM
 image: https://matic.network/banners/matic-network-16x9.png
 ---
 

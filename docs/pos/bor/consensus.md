@@ -1,19 +1,23 @@
 ---
 id: consensus
 title: Bor Consensus
-description: "Bor mechanism for fetching new producers."
+description: Bor mechanism for fetching new producers
 keywords:
   - docs
   - matic
+  - Bor Consensus
+  - polygon
 image: https://matic.network/banners/matic-network-16x9.png 
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Bor consensus is inspired by Clique consensus: [https://eips.ethereum.org/EIPS/eip-225](https://eips.ethereum.org/EIPS/eip-225) Clique works with multiple pre-defined producers. All producers vote on new producers using Clique APIs. They take a turn creating blocks.
+# **Bor Consensus**
+
+Bor consensus is inspired by Clique consensus: [https://eips.ethereum.org/EIPS/eip-225](https://eips.ethereum.org/EIPS/eip-225). Clique works with multiple pre-defined producers. All producers vote on new producers using Clique APIs. They take turns creating blocks.
 
 Bor fetches new producers through span and sprint management mechanism.
 
-## Validators
+## **Validators**
 
 Polygon is a Proof-of-stake system. Anyone can stake their Matic token on Ethereum smart-contract, "staking contract", and become a validator for the system. 
 
@@ -28,15 +32,11 @@ function stake(
 
 Once validators are active on Heimdall they get selected as producers through `bor` module.
 
-Check Bor overview to understand span management more in details:
+Check Bor overview to understand span management more in details: [Bor Overview](https://www.notion.so/Bor-Overview-c8bdb110cd4d4090a7e1589ac1006bab)
 
-[Bor Overview](https://www.notion.so/Bor-Overview-c8bdb110cd4d4090a7e1589ac1006bab)
+## **Span**
 
-## Span
-
-A logically defined set of blocks for which a set of validators is chosen from among all the available validators.
-
-Heimdall provides span details through span-details APIs.
+A logically defined set of blocks for which a set of validators is chosen from among all the available validators. Heimdall provides span details through span-details APIs.
 
 ```go
 // HeimdallSpan represents span from heimdall APIs
@@ -67,11 +67,9 @@ Geth (In this case, Bor) uses block `snapshot` to store state data for each bloc
 
 Each validator in span contains voting power. Based on their power, they get selected as block producers. Higher power, a higher probability of becoming block producers. Bor uses Tendermint's algorithm for the same. Source: [https://github.com/maticnetwork/bor/blob/master/consensus/bor/validator_set.go](https://github.com/maticnetwork/bor/blob/master/consensus/bor/validator_set.go)
 
-## Sprint
+## **Sprint**
 
-A set of blocks within a span for which only a single block producer is chosen to produce blocks. The sprint size is a factor of span size. 
-
-Bor uses `validatorSet` to get current proposer/producer for current sprint.
+A set of blocks within a span for which only a single block producer is chosen to produce blocks. The sprint size is a factor of span size. Bor uses `validatorSet` to get current proposer/producer for current sprint.
 
 ```go
 currentProposerForSprint := snap.ValidatorSet().Proposer
@@ -79,7 +77,7 @@ currentProposerForSprint := snap.ValidatorSet().Proposer
 
 Apart from the current proposer, Bor selects back-up producers.
 
-## Authorizing a block
+## **Authorizing a block**
 
 The producers in Bor also called signers, since to authorize a block for the network, the producer needs to sign the block's hash containing **everything except the signature itself**. This means that the hash contains every field of the header, and also the `extraData` with the exception of the 65-byte signature suffix.
 
@@ -87,7 +85,7 @@ This hash is signed using the standard `secp256k1` curve, and the resulting 65
 
 Each signed block is assigned to a difficulty that puts weight on Block. In-turn signing weighs more (`DIFF_INTURN`) than out of turn one (`DIFF_NOTURN`).
 
-**Authorization strategies**
+### **Authorization strategies**
 
 As long as producers conform to the above specs, they can authorize and distribute blocks as they see fit. The following suggested strategy will, however, reduce network traffic and small forks, so it’s a suggested feature:
 
@@ -123,7 +121,7 @@ Wiggle is the time that a producer should wait before starting to produce a bloc
 - Now if D also doesn't produce a block, A will start producing one when the wiggle time of `2 * Period * (pos(a) + len(validatorSet) - pos(c)) = 4s` has elapsed.
 - Simmilary, wiggle for C is `6s`
 
-### Resolving forks
+### **Resolving forks**
 
 While the above mechanism adds to the robustness of chain to a certain extent, it introduces the possibility of forks. It could actually be possible that C produced a block, but there was a larger than expected delay in propagation and hence D also produced a block, so that leads to atleast 2 forks.
 
@@ -137,11 +135,11 @@ The resolution is simple - choose the chain with higher difficulty. But then the
 
 Now having defined the difficulty of each block, the difficulty of a fork is simply the sum of the difficulties of the blocks in that fork. In the case when a fork has to be chosen, the one with higher difficulty is chosen, since that is a reflection of the fact that blocks were produced by in-turn block producers. This is simply to provide some sense of finality to the user on Bor. 
 
-## View change
+## **View Change**
 
 After each span, Bor changes view. It means that it fetches new producers for the next span. 
 
-**Commit span**
+### **Commit span**
 
 When the current span is about to end (specifically at the end of the second-last sprint in the span), Bor pulls a new span from Heimdall. This is a simple HTTP call to the Heimdall node. Once this data is fetched, a `commitSpan` call is made to the BorValidatorSet genesis contract through System call.
 
@@ -157,13 +155,9 @@ header.Extra = header.Vanity + header.ProducerBytes /* optional */ + header.Seal
 
 <img src={useBaseUrl("img/Bor/header-bytes.svg")} />
 
-To know more about Bor: https://www.notion.so/Bor-Overview-c8bdb110cd4d4090a7e1589ac1006bab
+## **State sync from Ethereum Chain**
 
-## State sync from Ethereum chain
-
-Bor provides a mechanism where some specific events on the main ethereum chain are relayed to Bor. This is also how deposits to plasma contracts are processed.
-
-**Summary**
+Bor provides a mechanism where some specific events on the main Ethereum chain are relayed to Bor. This is also how deposits to plasma contracts are processed.
 
 1. Any contract on Ethereum may call [syncState](https://github.com/maticnetwork/contracts/blob/develop/contracts/root/stateSyncer/StateSender.sol#L33) in `StateSender.sol`. This call emits `StateSynced` event: https://github.com/maticnetwork/contracts/blob/develop/contracts/root/stateSyncer/StateSender.sol#L38
 
@@ -171,6 +165,6 @@ Bor provides a mechanism where some specific events on the main ethereum chain a
   event StateSynced(uint256 indexed id, address indexed contractAddress, bytes data)
   ```
 
-2. Heimdall listens to these events and calls `function proposeState(uint256 stateId)`  in `StateReceiver.sol`  - thus acting as a store for the pending state change ids. Note that the `proposeState` transaction will be processed even with a 0 gas fee as long as it is made by one of the validators in the current validator set: https://github.com/maticnetwork/genesis-contracts/blob/master/contracts/StateReceiver.sol#L24
+2. Heimdall listens to these events and calls `function proposeState(uint256 stateId)` in `StateReceiver.sol`  - thus acting as a store for the pending state change ids. Note that the `proposeState` transaction will be processed even with a 0 gas fee as long as it is made by one of the validators in the current validator set: https://github.com/maticnetwork/genesis-contracts/blob/master/contracts/StateReceiver.sol#L24
 
 3. At the start of every sprint, Bor pulls the details about the pending state changes using the states from Heimdall and commits them to the Bor state using a system call. See `commitState` here: https://github.com/maticnetwork/genesis-contracts/blob/f85d0409d2a99dff53617ad5429101d9937e3fc3/contracts/StateReceiver.sol#L41

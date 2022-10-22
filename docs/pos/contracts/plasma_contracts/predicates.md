@@ -1,17 +1,23 @@
 ---
 id: predicates
 title: Predicates in Polygon Plasma
-description: "Implementation details of our predicate design."
+description: Implementation details of Predicates in Polygon Plasma
 keywords:
   - docs
   - matic
+  - polygon
+  - plasma
+  - predicates
 image: https://matic.network/banners/matic-network-16x9.png 
 ---
+
+# **Predicates in Polygon Plasma**
+
 This article highlights the implementation details of our predicate design. Our predicate design is heavily inspired from [Understanding the Generalized Plasma Architecture](https://medium.com/plasma-group/plapps-and-predicates-understanding-the-generalized-plasma-architecture-fc171b25741) and we thank the plasma group for the same. We recently published our [Account based MoreVP](https://ethresear.ch/t/account-based-plasma-morevp/5480) specification. The linked post is a pre-requisite to understanding this document.
 
 Note: `withdrawManager` is our term for what plasma group calls the *commitment contract*.
 
-### Predicate for ERC20/721 token transfer
+### **Predicate for ERC20/721 token transfer**
 
 The most relevant functions in the ERC20/721 predicates are `startExit` and `verifyDeprecation`. See [IPredicate.sol 5](https://github.com/maticnetwork/contracts/blob/master/contracts/root/predicates/IPredicate.sol).
 

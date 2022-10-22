@@ -1,13 +1,18 @@
 ---
 id: important-contracts
 title: Important contracts
-description: "State Syncer, Deposit manager, Childchain and ChildERC20/721."
+description: State Syncer, Deposit manager, Childchain and ChildERC20/721
 keywords:
   - docs
   - matic
+  - polygon
+  - Important contracts
 image: https://matic.network/banners/matic-network-16x9.png 
 ---
-## State Syncer
+
+# **Important Contracts**
+
+## **State Syncer**
 
 This contract is used to relay state changes from Ethereum mainchain to Bor. Heimdall listens to `StateSynced` events on the `StateSender` contract and relays them to Bor using a system call.
 
@@ -22,7 +27,7 @@ contract StateSender {
 }
 ```
 
-## Deposit manager
+## **Deposit Manager**
 
 For depositing assets from mainchain to Bor. This contract acts as an escrow contract where the assets are held until they are withdrawn (via the withdraw manager and predicates).
 
@@ -52,7 +57,7 @@ function _createDepositBlock(
 }
 ```
 
-## ChildChain (Bor)
+## **ChildChain (Bor)**
 
 These deposits from above are minted to ERC20/721 token contracts on the bor. This happens via the [state receiver contract](https://www.notion.so/maticnetwork/Bor-Overview-c8bdb110cd4d4090a7e1589ac1006bab#aa94e6a9373943068b93d2c0e7f3d2e6) that calls `onStateReceive` method in `ChildChain`.
 
@@ -85,7 +90,7 @@ contract ChildChain {
 }
 ```
 
-## ChildERC20/721
+## **ChildERC20/721**
 
 ```jsx
 contract ChildERC20 is ERC20 {
@@ -102,5 +107,3 @@ contract ChildERC20 is ERC20 {
 	}
 }
 ```
-<!-- 
-## Withdraw Manager (WIP) -->
