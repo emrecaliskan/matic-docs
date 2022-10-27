@@ -12,6 +12,7 @@ keywords:
   - how-to
   - extrinsic
   - explorer
+  - use
 image: https://matic.network/banners/matic-network-16x9.png 
 slug: avail-quick-start
 ---
@@ -26,7 +27,7 @@ through one of our **[community channels](https://polygon.technology/community/)
 
 :::
  
-## Generate an Avail Account
+## **Generate an Avail Account**
 
 You can generate an account using one of two methods:
 - [Avail Explorer](https://testnet.polygonavail.net/)
@@ -81,7 +82,7 @@ access your account.
 
 :::
 
-## Receive AVL Testnet Tokens
+## **Receive AVL Testnet Tokens**
 
 On the Avail Explorer, click on the icon next to your account name to
 copy your address.  Alternatively, you can copy the address manually.
@@ -100,7 +101,7 @@ Upon successful transfer, your account should now have a non-zero balance. If yo
 obtaining tokens from the faucet, please reach out to the 
 [support team](https://support.polygon.technology/support/home).
 
-## Submit a New Transaction
+## **Submit a New Transaction**
 
 On the Avail Explorer, navigate to the **Developer** tab and click on
 the **Extrinsics** sub-tab.
@@ -281,7 +282,7 @@ medium.
 
 :::
 
-## Receive AVL Testnet Tokens
+## **Receive AVL Testnet Tokens**
 
 Head over to the [Polygon faucet](https://faucet.polygon.technology).
 
@@ -293,7 +294,7 @@ minute to complete.
 
 Upon successful transfer, your account should now have a non-zero balance. If you face any issues obtaining tokens from the faucet, please reach out to the [support team](https://support.polygon.technology/support/home).
 
-### Balance Check with `@polkadot/api`
+### **Balance Check with `@polkadot/api`**
 
 Use the following script to check the balance of the account you just created:
 
@@ -399,7 +400,7 @@ For convenience, you can add the account you generated with
 
 :::
 
-## Submit a New Transaction
+## **Submit a New Transaction**
 
 You can use the provided scripts in this section to sign and submit transactions. 
 
