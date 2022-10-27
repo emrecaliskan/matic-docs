@@ -34,8 +34,8 @@ The transaction is committed to the Polygon staking contracts on the Ethereum ma
 
 See also:
 
-* [Heimdall architecture: Checkpoint](../pos/heimdall/checkpoint)
-* [Checkpoint Mechanism](validator/core-components/checkpoint-mechanism)
+* [Heimdall architecture: Checkpoint](/docs/pos/heimdall/checkpoint)
+* [Checkpoint Mechanism](/docs/maintain/validator/core-components/checkpoint-mechanism)
 
 ## **Commission**
 
@@ -47,7 +47,7 @@ See also [Validator Commission Operations](/docs/maintain/validate/validator-com
 
 The delegator role stakes the MATIC tokens to secure the Polygon Network with existing [validators](#validator) without running the nodes themselves.
 
-See also [Who Is a Delegator](polygon-basics/who-is-delegator).
+See also [Who Is a Delegator](/docs/maintain/polygon-basics/who-is-delegator).
 
 ## **Full Node**
 
