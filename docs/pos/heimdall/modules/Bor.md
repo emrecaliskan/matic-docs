@@ -1,23 +1,26 @@
 ---
 id: bor
 title: Bor
-description: "Module that handles span management on Heimdall." 
+description: Module that handles span management on Heimdall
 keywords:
   - docs
   - matic
+  - bor module
+  - heimdall
 image: https://matic.network/banners/matic-network-16x9.png 
 ---
-## Overview
+
+# **Bor Module**
 
 Bor module handles span management on Heimdall. Given Bor chain's current block number `n`, current span `span`, if `span.StartBlock <= n < span.EndBlock`, new span is proposed on Heimdall by any validator.
 
-## Messages
+## **Messages**
 
-### MsgProposeSpan
+### **MsgProposeSpan**
 
-Source:  [https://github.com/maticnetwork/heimdall/blob/develop/bor/handler.go#L27](https://github.com/maticnetwork/heimdall/blob/develop/bor/handler.go#L27)
+`MsgProposeSpan` sets the validators’ committee for a given `span` and stores a new span into Heimdall state.
 
-`MsgProposeSpan` sets the validators’ committee for a given `span` and stores a new span into Heimdall state. Here is how this transaction chooses producers out of all validators:
+Source: [https://github.com/maticnetwork/heimdall/blob/develop/bor/handler.go#L27](https://github.com/maticnetwork/heimdall/blob/develop/bor/handler.go#L27)
 
 ```go
 // MsgProposeSpan creates msg propose span
@@ -29,6 +32,8 @@ type MsgProposeSpan struct {
 	ChainID    string                  `json:"bor_chain_id"`
 }
 ```
+
+Here is how this transaction chooses producers out of all validators:
 
 1. It creates multiple slots based on validators' power. Example: A with power 10 will have 10 slots, B with power 20 with have 20 slots.
 2. With all slots, `shuffle` function shuffles them using `seed` and selects first `producerCount` producers.  `bor` module on Heimdall uses ETH 2.0 shuffle algorithm to choose producers out of all validators. Each span `n` uses block hash of Ethereum (ETH 1.0) block `n`  as `seed`. Note that slots based selection allows validators to get selected based on their power. The higher power validator will have a higher probability to get selected. Source: [https://github.com/maticnetwork/heimdall/blob/develop/bor/selection.go](https://github.com/maticnetwork/heimdall/blob/develop/bor/selection.go)
@@ -66,7 +71,7 @@ func convertToSlots(vals []hmTypes.Validator) (validatorIndices []uint64) {
 }
 ```
 
-## Types
+## **Types**
 
 Here are the span details that Heimdall uses:
 
@@ -93,9 +98,9 @@ The Bor module contains the following parameters:
 |ProducerCount         |uint64|4                 |
 
 
-## CLI commands
+## **CLI Commands**
 
-### Span propose tx
+### **Span propose tx**
 
 ```bash
 heimdallcli tx bor propose-span \
@@ -103,7 +108,7 @@ heimdallcli tx bor propose-span \
 	--chain-id <heimdall-chain-id>
 ```
 
-### Query current span
+### **Query current span**
 
 ```bash
 heimdallcli query bor span latest-span --chain-id <heimdall-chain-id>
@@ -156,7 +161,7 @@ Expected output:
 }
 ```
 
-### Query span by id
+### **Query span by id**
 
 ```bash
 heimdallcli query bor span --span-id <span-id> --chain-id <heimdall-chain-id>
@@ -164,15 +169,15 @@ heimdallcli query bor span --span-id <span-id> --chain-id <heimdall-chain-id>
 
 It prints the result in same format as above.
 
-### Params
+### **Parameters**
 
-To print all params
+To print all params;
 
 ```go
 heimdalldcli query bor params
 ```
 
-**Expected Result:**
+Expected Result:
 
 ```go
 sprint_duration: 64
@@ -180,7 +185,7 @@ span_duration: 6400
 producer_count: 4
 ```
 
-## REST APIs
+## **REST APIs**
 
 |Name                  |Method|Endpoint          |
 |----------------------|------|------------------|
