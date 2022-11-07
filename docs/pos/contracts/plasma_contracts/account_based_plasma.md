@@ -11,11 +11,11 @@ keywords:
 image: https://matic.network/banners/matic-network-16x9.png 
 ---
 
-# **Account Based Plasma**
+# Account Based Plasma
 
 Polygon Plasma follows a model similar to [Plasma MoreVP](https://ethresear.ch/t/more-viable-plasma/2160), but is an **account-based implementation** compared to other UTXO-based implementations. The sidechain is EVM-compatible. Using the MoreVP construction, we also eliminate the need for confirmation signatures.
 
-## **PoS layer and Checkpoints**
+## PoS layer and Checkpoints
 
 The Polygon Network uses a dual strategy of Proof of Stake at the checkpointing layer and Block Producers at the block producer layer to achieve faster blocktimes and achieves finality on the main chain using the checkpoints and fraud proofs.
 
@@ -23,7 +23,7 @@ On Polygon Network’s checkpointing layer, for every few blocks on the block la
 
 Apart from providing finality on the mainchain, checkpoints play a role in withdrawals as they contain the proof-of-burn (withdrawal) of tokens in the event of user withdrawal. It enables the users to prove their remaining tokens on root contract using Patricia Merkle proof and header block proof. Note that to prove remaining tokens, the header block must be committed to the Root Chain through PoS (Stakeholders). The withdrawal process will incur Ethereum gas fees as usual. We leverage the checkpoints heavily for the exit games.
 
-## **UTXO-like Event Logs**
+## UTXO-like Event Logs
 
 For ERC20/ERC721 transfers, this is achieved by using a UTXO-like event log data structure. Below is a `LogTransfer` event for reference.
 
@@ -42,13 +42,13 @@ event LogTransfer(
 
 So, basically every ERC20/ERC721 transfer emits this event and the previous balances of the sender and receiver (`input1` and `input2`) become the input (UTXO like) to the tx and the new balances become the outputs (`output1` and `output2`). The transfers are tracked by way of collating all the related `LogTransfer` events.
 
-## **Exit Games**
+## Exit Games
 
 Since the blocks are produced by a single block producer (or very few), it exposes a surface for fraud. We’ll briefly discuss the attack scenarios and then talk about how the plasma guarantees safeguard a user.
 
-## **Attack Vectors**
+## Attack Vectors
 
-### **Malicious Operator**
+### Malicious Operator
 The following discusses the scenarios where operator could become malicious and try to cheat.
 
 1. Out-of-nowhere tokens / double spends / malformed receipts that fraudulently increases (for an operator controlled account) / decreases (for a user) the token balance.
@@ -58,7 +58,7 @@ The following discusses the scenarios where operator could become malicious and 
 
 For reasons listed above or otherwise, if the plasma chain has become rogue, the user’s need to start mass exiting and we aspire to provide exit constructions on the root chain that the users can leverage, if and when the time comes.
 
-### **Malicious User**
+### Malicious User
 
 1. User starts exit from a committed tx but continues to spend tokens on the side chain. Similar to double spending but across 2 chains.
 
@@ -81,7 +81,7 @@ Let's introduce some terminology before we continue discussing the exit scenario
 - **Reference tx**: Txs just preceding the exit tx for that particular user and token. As defined in our account balance based UTXO scheme, the outputs to the reference tx become the inputs to the tx being exited from.
 - **MoreVP exit priority**: Age of the youngest input (among the reference txs) to a particular tx. It’ll most often be used for calculating the exit priority.
 
-### **Burn tokens**
+### Burn tokens
 
 To exit the sidechain, a user would launch a *withdraw aka burn tokens* tx on the plasma chain. This tx will emit a `Withdraw` event.
 
@@ -115,7 +115,7 @@ startExit(withdrawTx, proofOfInclusion /* of the withdrawTx in the checkpoint */
 
 Whenever a user wishes to exit the plasma chain, they (or abstracted out by their client app i.e. wallet) should burn the tokens on the side chain, wait for it to get checkpointed and then start an exit from the checkpointed withdraw tx.
 
-### **Exit from the last ERC20/721 transfers (MoreVP)**
+### Exit from the last ERC20/721 transfers (MoreVP)
 
 Consider the scenario, user made a ERC20 transfer on the side chain. The operator added a out-of-nowhere tx just before the user’s transfer and colluded with the validators to checkpoint this block. In this scenario and more generally, in the attack vectors A1 through A3 discussed above, the user may not have had the opportunity to burn their tokens before a malicious tx is included and hence would need to start an exit from the last checkpointed tx on the root chain - for this reason, in addition to the burn exit, we need to support exits from a variety of txs like ERC20/721 transfers among others. Building upon this attack vector and breaking down the 2 scenarios:
 
@@ -151,13 +151,13 @@ startExit(referenceTx, proofOfInclusion, exitTx) {
 
 ```
 
-### **Exit from an in-flight transaction (MoreVP)**
+### Exit from an in-flight transaction (MoreVP)
 
 This scenario is to combat data unavailability scenario. Let’s say I made a tx but I do not know whether that tx has been included due to data unavailability. I can start an exit from this in-flight tx by referencing the last checkpointed tx. The user should be careful not to make any txs whenever they start a MoreVP style exit, otherwise they will be challenged.
 
 **Notes:** When exiting from a MoreVP style construction, a user can start an exit by providing reference txs, exit tx and placing a small `exit bond`. For any exit, if the exit is successfully challenged, the exit will be cancelled and exit bond will be seized.
 
-## **Limitations**
+## Limitations
 
 1. Large proof size: Merkle proof of the inclusion of the transaction and merkle proof of the inclusion of block (that contains that transaction) in the checkpoint.
 2. Mass exit: If the operator turns malicious, the users need to start mass exiting.

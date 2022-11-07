@@ -12,7 +12,7 @@ image: https://matic.network/banners/matic-network-16x9.png
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-# **Staking Manager**
+# Staking Manager
 
 For the Polygon's Proof of Security based consensus, all the ⅔+1 proof verification and handling of staking, rewards are executed on the Ethereum smart contract. The whole design follows this philosophy of doing less on the Mainnet contract. It does information verification and pushes all the computation-heavy operations to L2 (Read Heimdall for this doc).
 
@@ -24,12 +24,12 @@ Since the contract is using NFT ID as a source of ownership, change of ownership
 
 `validatorThreshold`: Shows the maximum number of validators accepted by the system, also called slots.
 
-## **AccountStateRoot**
+## AccountStateRoot
 
 - For various accounting done on Heimdall for validators and delegator, account root is submitted while submitting the `checkpoint`.
 - accRoot is used while `claimRewards` and `unStakeClaim`.
 
-## **Stake/stakeFor**
+## Stake/stakeFor
 
 ```cpp
 function stake(
@@ -54,13 +54,13 @@ function stakeFor(
 - One unique `NFT` is minted on each new stake / stakeFor call, which can be transferred to anyone but can be owned 1:1 Ethereum address.
 - `acceptDelegation` set to true if validators want to accept delegation, `ValidatorShare` contract is deployed for the validator.
 
-## **Unstake**
+## Unstake
 
 - Remove validator from validator set in next epoch(only valid for current checkpoint once called `unstake`
 - Remove validator's stake from timeline data structure, update count for validator's exit epoch.
 - If validator had delegation on collect all rewards and lock delegation contract for new delegations.
 
-## **unstakeClaim**
+## unstakeClaim
 
 ```cpp
 function unstakeClaim(uint256 validatorId) public;
@@ -69,7 +69,7 @@ function unstakeClaim(uint256 validatorId) public;
 - After `unstaking`, validators are put into withdrawal period so that they can be slashed if any fraud found after `unstaking` for past frauds.
 - Once `WITHDRAWAL_DELAY` period is served, validators can call this function and do settlement with stakeManager (get rewards if any, get staked tokens back, burn NFT, etc.).
 
-## **Restake**
+## Restake
 
 ```cpp
 function restake(uint256 validatorId, uint256 amount, bool stakeRewards) public;
@@ -78,7 +78,7 @@ function restake(uint256 validatorId, uint256 amount, bool stakeRewards) public;
 - Allows validators to increase their stake by putting new amount or rewards or both.
 - MUST update timeline (amount) for active stake.
 
-## **withdrawRewards**
+## withdrawRewards
 
 ```cpp
 function withdrawRewards(uint256 validatorId) public;
@@ -86,7 +86,7 @@ function withdrawRewards(uint256 validatorId) public;
 
 - Allows validators to withdraw accumulated rewards, must consider getting rewards from delegation contract if validator accepts delegation.
 
-## **updateSigner**
+## updateSigner
 
 ```cpp
 function updateSigner(uint256 validatorId, bytes memory signerPubkey) public
@@ -94,7 +94,7 @@ function updateSigner(uint256 validatorId, bytes memory signerPubkey) public
 
 - Allows validators to update signer address(which is used to validate blocks on Polygon chain and checkpoint sigs on stakeManager)
 
-## **topUpForFee**
+## topUpForFee
 
 ```cpp
 function topUpForFee(uint256 validatorId, uint256 heimdallFee) public;
@@ -102,7 +102,7 @@ function topUpForFee(uint256 validatorId, uint256 heimdallFee) public;
 
 - Validators can top-up their balance for Heimdall fee.
 
-## **claimFee**
+## claimFee
 
 ```cpp
 function claimFee(
@@ -119,11 +119,11 @@ function claimFee(
 - Note that `accountStateRoot` is re-written to prevent exits on multiple checkpoints (for old root and save accounting on stakeManager)
 - `accumSlashedAmount` is unused at the moment, will be used for slashing on Heimdall if needed.
 
-## **StakingNFT**
+## StakingNFT
 
 - Standard erc721 with few restrictions like one token per user and minted in sequential manner.
 
-## **Validator Replacement**
+## Validator Replacement
 
 In order to replace poor performing validator, there is periodic auction for each validator slot. For individual validators, there is an auction window where wanna be validators can bid their amount and start an auction using `startAuction` function. 
 
@@ -144,7 +144,7 @@ In order to start a bid or bid higher on already running auction this function i
 
 `perceivedStakeFactor` is used to calculate exact factor*old stake (note currently it is by default 1 WIP for picking the function). MUST check for auction from last auction period if any still going on (one can choose to not call `confirmAuction` in order to get her capital out in next auction). Normally continuous english auction is going on in a `auctionPeriod`.
 
-### **confirmAuctionBid**
+### confirmAuctionBid
 
 ```jsx
 function confirmAuctionBid(
@@ -159,7 +159,7 @@ function confirmAuctionBid(
 - If last bidder is owner of `validatorId` behaviour should be similar to restake.
 - In second case unStake `validatorId` and add new user as validator from next checkpoint, for the new user behaviour should be similar to stake/stakeFor.
 
-## **checkSignatures**
+## checkSignatures
 
 ```cpp
 function checkSignatures(
@@ -175,11 +175,11 @@ function checkSignatures(
 - This function validates only unique sigs and checks for ⅔+1 power has signed on checkpoint root (inclusion in `voteHash` verification in RootChain contract for all data) `currentValidatorSetTotalStake` provides current active stake.
 - Rewards are distributed proportional to validator's stake. More on rewards in [Rewards Distribution](https://www.notion.so/Rewards-Distribution-127d586c14544beb9ea326fd3bb5d3a2)
 
-## **isValidator**
+## isValidator
 
 Checks if given validator is active validator for current epoch.
 
-## **Timeline Data Structure**
+## Timeline Data Structure
 
 ```cpp
 struct State {
@@ -193,16 +193,16 @@ mapping(uint256 => State) public validatorState;
 
 ---
 
-## **StakingInfo**
+## StakingInfo
 
 Centralised logging contract for both validator and delegation events, includes few read only functions.
 
 Source: [StakingInfo.sol](https://github.com/maticnetwork/contracts/blob/develop/contracts/staking/StakingInfo.sol)
 
-## **ValidatorShareFactory**
+## ValidatorShareFactory
 
 Factory contract to deploy `ValidatorShare` contract for each validator who opt-in for delegation.
 
----
-
-NOTE: `jail`, `unJail` and `slash` function aren't used currently (part of slashing implementation).
+:::note
+`jail`, `unJail` and `slash` function aren't used currently (part of slashing implementation).
+:::
