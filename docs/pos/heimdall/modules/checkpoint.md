@@ -12,13 +12,13 @@ image: https://matic.network/banners/matic-network-16x9.png
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-# **Checkpoint**
+# Checkpoint
 
 `checkpoint` module manages checkpoint related functionalities for Heimdall. It needs Bor chain when a new checkpoint is proposed on Heimdall to verify checkpoint root hash.
 
 All related to checkpoint data is explained in details [here](/docs/pos/heimdall/checkpoint).
 
-## **Checkpoint life-cycle**
+## Checkpoint life-cycle
 
 Heimdall uses the same leader selection algorithm as Tendermint to select the next proposer. While submitting checkpoints on the Ethereum chain, it may fail due to multiple reasons like gas limit, traffic on Ethereum, high gas fees. That's why the multi-stage checkpoint process is required.
 
@@ -26,11 +26,11 @@ Each checkpoint has validator as proposer. If checkpoint on Ethereum chain fails
 
 <img src={useBaseUrl("img/checkpoint/checkpoint-flowchart.svg")} />
 
-## **Messages**
+## Messages
 
 <img src={useBaseUrl("img/checkpoint/checkpoint-module-flow.svg")} />
 
-### **MsgCheckpoint**
+### MsgCheckpoint
 
 `MsgCheckpoint` handles checkpoint verification on Heimdall. Only this message uses RLP encoding as it needs to be verified on Ethereum chain.
 
@@ -63,7 +63,7 @@ if stdTx.Msg.Type() == "checkpoint" && stdTx.Msg.Route() == "checkpoint" {
 
 This transaction will store proposed checkpoint on `checkpointBuffer` state instead of actual checkpoint list state.
 
-### **MsgCheckpointAck**
+### MsgCheckpointAck
 
 `MsgCheckpointAck` handles successful checkpoint submission. Here `HeaderBlock` is a checkpoint counter;
 
@@ -92,7 +92,7 @@ event NewHeaderBlock(
 
 On successful event verification, it updates the actual count of checkpoint, also known as `ackCount` and clears the `checkpointBuffer`.
 
-### **MsgCheckpointNoAck**
+### MsgCheckpointNoAck
 
 `MsgCheckpointNoAck` handles un-successful checkpoints or offline proposers. This transaction is only valid after `CheckpointBufferTime` has passed from the following events:
 
@@ -108,7 +108,7 @@ type MsgCheckpointNoAck struct {
 
 This transaction gives the timeout period for the current proposer to send checkpoint/ack before Heimdall chooses a new `proposer` for the next checkpoint.
 
-## **Parameters**
+## Parameters
 
 The checkpoint module contains the following parameters:
 
@@ -117,9 +117,9 @@ The checkpoint module contains the following parameters:
 |CheckpointBufferTime  |uint64|1000 * time.Second|
 
 
-## **CLI Commands**
+## CLI Commands
 
-### **Params**
+### Params
 
 To print all params:
 
@@ -133,7 +133,7 @@ Expected Result:
 checkpoint_buffer_time: 16m40s
 ```
 
-### **Send Checkpoint**
+### Send Checkpoint
 
 Following command sends checkpoint transaction on Heimdall:
 
@@ -146,7 +146,7 @@ heimdallcli tx checkpoint send-checkpoint \
 	--chain-id=<chain-id>
 ```
 
-### **Send `ack`**
+### Send `ack`
 
 Following command sends ack transaction on Heimdall if checkpoint is successful on Ethereum:
 
@@ -158,7 +158,7 @@ heimdallcli tx checkpoint send-ack \
   --chain-id=<chain-id>
 ```
 
-### **Send `no-ack`**
+### Send `no-ack`
 
 Following command send no-ack transaction on Heimdall:
 
@@ -166,7 +166,7 @@ Following command send no-ack transaction on Heimdall:
 heimdallcli tx checkpoint send-noack --chain-id <chain-id>
 ```
 
-## **REST APIs**
+## REST APIs
 
 |Name                  |Method|Endpoint          |
 |----------------------|------|------------------|

@@ -11,7 +11,7 @@ keywords:
 image: https://matic.network/banners/matic-network-16x9.png 
 ---
 
-# **State Sync Mechanism**
+# State Sync Mechanism
 
 `State Sync` is the native mechanism to read Ethereum data from Matic EVM chain. 
 

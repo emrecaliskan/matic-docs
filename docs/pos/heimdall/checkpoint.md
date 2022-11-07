@@ -13,11 +13,11 @@ image: https://matic.network/banners/matic-network-16x9.png
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-# **Checkpoint**
+# Checkpoint
 
 Checkpoints are the most crucial part of the Polygon network. It represents snapshots of the Bor chain state and is supposed to be attested by ⅔+ of the validator set before it is validated and submitted on the contracts deployed on Ethereum.
 
-## **Types**
+## Types
 
 Checkpoint structure on Heimdall state looks like following:
 
@@ -45,7 +45,7 @@ type CheckpointBlockHeader struct {
 }
 ```
 
-### **Root hash**
+### Root hash
 
 <img src={useBaseUrl("img/checkpoint/checkpoint.svg")} />
 
@@ -93,7 +93,7 @@ tree.Generate(convert(headers), sha3.NewLegacyKeccak256())
 rootHash := tree.Root().Hash
 ```
 
-### **AccountRootHash**
+### AccountRootHash
 
 `AccountRootHash` is the hash of the validator account-related information that needs to pass to the Ethereum chain at each checkpoint.
 

@@ -11,7 +11,7 @@ keywords:
 image: https://matic.network/banners/matic-network-16x9.png 
 ---
 
-# **Chain Manager**
+# Chain Manager
 
 This document specifies an overview of the chain manager module of Heimdall.
 
@@ -19,7 +19,7 @@ The **chain manager** module provides all necessary dependencies like `contract-
 
 Params are updated through the `gov` module.
 
-## **Types**
+## Types
 
 Chainmanager structure on Heimdall looks like the following:
 
@@ -52,9 +52,9 @@ type ChainParams struct {
 }
 ```
 
-## **CLI Commands**
+## CLI Commands
 
-### **Parameters**
+### Parameters
 
 To print all params;
 
@@ -62,7 +62,7 @@ To print all params;
 heimdallcli query chainmanager params --trust-node
 ```
 
-### **Expected Result**
+### Expected Result
 
 ```yaml
 tx_confirmation_time: 12s
@@ -77,7 +77,7 @@ chain_params:
   validator_set_address: "0x0000000000000000000000000000000000000000"
 ```
 
-### **REST APIs**
+### REST APIs
 
 |Name                  |Method|URL               |
 |----------------------|------|------------------|

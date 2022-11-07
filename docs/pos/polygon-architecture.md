@@ -13,7 +13,7 @@ image: https://matic.network/banners/matic-network-16x9.png
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-# **The Architecture of Polygon**
+# The Architecture of Polygon
 
 **Polygon** is a blockchain application platform that provides hybrid Proof-of-Stake and Plasma-enabled sidechains.
 
@@ -38,7 +38,7 @@ enable an interoperable decentralized Layer 2 blockchain platform based on commu
 
 <img src={useBaseUrl("img/matic/Architecture.png")} />
 
-## **Staking Contracts**
+## Staking Contracts
 
 To enable the [Proof of Stake (PoS)](docs/home/polygon-basics/what-is-proof-of-stake) mechanism on Polygon,
 the system employs a set of [staking](/docs/maintain/glossary#staking) management contracts on the Ethereum mainnet.
@@ -51,7 +51,7 @@ The staking contracts implement the following features:
 
 The PoS mechanism also acts as a mitigation to the data unavailability problem for the Polygon sidechains.
 
-## **Heimdall**
+## Heimdall
 
 Heimdall is the proof of stake validation layer that handles the aggregation of blocks produced
 by [Bor](/docs/maintain/glossary#bor) into a Merkle tree and publishes the Merkle root periodically to the
@@ -75,7 +75,7 @@ An overview of the process:
 
 More details on Heimdall are available on the [Heimdall architecture](/docs/pos/heimdall/overview) guide.
 
-## **Bor**
+## Bor
 
 Bor is Polygon's sidechain block producer layer - the entity responsible for aggregating transactions into blocks.  Currently, it is a basic Geth implementation with custom changes done to the consensus algorithm.
 
@@ -86,7 +86,7 @@ the Merkle tree hash of a set of blocks on Bor is committed to Ethereum periodic
 
 More details are available on the [Bor architecture](/docs/pos/bor/overview) guide.
 
-## **Resources**
+## Resources
 
 * [Bor Architecture](https://wiki.polygon.technology/docs/pos/bor)
 * [Heimdall Architecture](https://forum.polygon.technology/t/matic-system-overview-heimdall/8323)

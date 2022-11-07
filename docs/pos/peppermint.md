@@ -11,11 +11,11 @@ keywords:
 image: https://matic.network/banners/matic-network-16x9.png 
 ---
 
-# **Peppermint**
+# Peppermint
 
 Peppermint is a modified Tendermint. It is changed to make it compatible with Ethereum addresses and verifiable on Ethereum chain.
 
-## **Overview**
+## Overview
 
 1. Changes to signature scheme
 2. Changes to `vote` to make it verifiable on Ethereum smart contract

@@ -12,15 +12,15 @@ keywords:
 image: https://matic.network/banners/matic-network-16x9.png 
 ---
 
-# **Clerk**
+# Clerk
 
 Clerk manages generic state-sync from Ethereum chain to Bor chain. Heimdall agrees on state sync, which is initiated on the Ethereum chain using the Clerk module.
 
 More details are available in [state sync mechanism](/docs/pos/bor/core_concepts.md#state-management-state-sync)
 
-## **Messages**
+## Messages
 
-### **MsgEventRecord**
+### MsgEventRecord
 
 `MsgEventRecord` transaction is responsible for validating events from `StateSender.sol`  and storing the state on Heimdall for Bor to use.
 
@@ -39,9 +39,9 @@ type MsgEventRecord struct {
 }
 ```
 
-## **CLI Commands**
+## CLI Commands
 
-### **Send state record transaction**
+### Send state record transaction
 
 ```bash
 heimdallcli tx clerk record
@@ -51,13 +51,13 @@ heimdallcli tx clerk record
 	--chain-id <heimdall-chain-id>
 ```
 
-### **To query already validated state event record**
+### To query already validated state event record
 
 ```go
 heimdallcli query clerk record --id <state-record-id>
 ```
 
-## **REST APIs**
+## REST APIs
 
 |Name                  |Method|Endpoint          |
 |----------------------|------|------------------|

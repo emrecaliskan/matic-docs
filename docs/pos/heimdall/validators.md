@@ -11,7 +11,7 @@ keywords:
 image: https://matic.network/banners/matic-network-16x9.png 
 ---
 
-# **Heimdall Validators**
+# Heimdall Validators
 
 Validators are an essential part of the Heimdall. Heimdall has an option to change validators at the end of each block. It is called `EndBlocker` which is a part of Cosmos-SDK: [https://docs.cosmos.network/master/building-modules/beginblock-endblock.html](https://docs.cosmos.network/master/building-modules/beginblock-endblock.html)
 
@@ -42,8 +42,6 @@ In the end, it returns validator updates for the Tendermint.
 Source: [https://github.com/maticnetwork/heimdall/blob/develop/app/app.go#L500-L542](https://github.com/maticnetwork/heimdall/blob/develop/app/app.go#L500-L542)
 
 ```go
-...
-
 // --- Start update to new validators
 currentValidatorSet := app.StakingKeeper.GetValidatorSet(ctx)
 allValidators := app.StakingKeeper.GetAllValidators(ctx)
@@ -82,8 +80,6 @@ if len(setUpdates) > 0 {
 		})
 	}
 }
-
-...
 
 // send validator updates to peppermint
 return abci.ResponseEndBlock{

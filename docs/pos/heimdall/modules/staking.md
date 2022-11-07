@@ -12,31 +12,31 @@ image: https://matic.network/banners/matic-network-16x9.png
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-# **Staking**
+# Staking
 
 Staking module manages validator related transactions and state for Heimdall. Note that a validator stakes their tokens on the Ethereum chain and becomes a validator. Respective validators send the transactions on Heimdall using necessary parameters to acknowledge the Ethereum stake change. Once the majority of the validators agree on the change on the stake, this module saves the validator information on Heimdall state.
 
-## **Key Management**
+## Key Management
 
 For key management, please refer to [Validator key management](/docs/pos/heimdall/validator-key-management)
 
-## **Delegation**
+## Delegation
 
 This module only manages validator staking on Heimdall. The delegation is only available on smart contracts on the Ethereum chain. To optimize the delegation rewards calculation on smart contracts, we are using validator shares (ERC20 per validator). 
 
 More details here: [Delegation (Validator shares)](/docs/pos/contracts/delegation)
 
-## **Rewards**
+## Rewards
 
 All rewards are distributed on the Ethereum chain. The validators and delegators claim their rewards or re-stake by simply sending the transaction on `StakeManager.sol` 
 
 More details here: [Rewards](/docs/maintain/validator/rewards.md#what-is-the-incentive)
 
-## **Messages**
+## Messages
 
 <img src={useBaseUrl('img/staking/stake-management-flow.svg')} />
 
-### **MsgValidatorJoin**
+### MsgValidatorJoin
 
 `MsgValidatorJoin` handles the staking when a new validator joins the system. Once validator calls `stake` or `stakeFor` in `StakingManager.sol` on Ethereum, and the new `Staked` event is emitted.
 
@@ -79,7 +79,7 @@ type MsgValidatorJoin struct {
 }
 ```
 
-### **MsgStakeUpdate**
+### MsgStakeUpdate
 
 `MsgStakeUpdate` handles the stake update when a validator the re-stakes or new delegation comes in. In either case, the new `StakeUpdate` event is emitted.
 
@@ -108,7 +108,7 @@ type MsgStakeUpdate struct {
 }
 ```
 
-### **MsgValidatorExit**
+### MsgValidatorExit
 
 `MsgValidatorExit` handles the validator exit process after a validator initiates the exit process on Ethereum. It emits `SignerUpdate` event.
 
@@ -140,7 +140,7 @@ type MsgValidatorExit struct {
 }
 ```
 
-### **MsgSignerUpdate**
+### MsgSignerUpdate
 
 `MsgSignerUpdate` handles the signer update when a validator updates signer key on Ethereum. It emits `SignerUpdate` event.
 
@@ -174,9 +174,9 @@ type MsgSignerUpdate struct {
 }
 ```
 
-## **CLI Commands**
+## CLI Commands
 
-### **Validator details**
+### Validator details
 
 **By signer address**
 
@@ -224,7 +224,7 @@ This command should display the following output:
 }
 ```
 
-### **Validator join**
+### Validator join
 
 This command sends validator join command through CLI:
 
@@ -238,7 +238,7 @@ heimdallcli tx staking validator-join \
 
 `tx-hash` value must be the same as Ethereum TX hash which emitted `Staked` event and `log-index` must be the same at which index the event is emitted.
 
-## **REST APIs**
+## REST APIs
 
 |Name                  |Method|Endpoint          |
 |----------------------|------|------------------|

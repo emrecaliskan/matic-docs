@@ -10,13 +10,13 @@ keywords:
 image: https://matic.network/banners/matic-network-16x9.png 
 ---
 
-# **Bor Module**
+# Bor Module
 
 Bor module handles span management on Heimdall. Given Bor chain's current block number `n`, current span `span`, if `span.StartBlock <= n < span.EndBlock`, new span is proposed on Heimdall by any validator.
 
-## **Messages**
+## Messages
 
-### **MsgProposeSpan**
+### MsgProposeSpan
 
 `MsgProposeSpan` sets the validators’ committee for a given `span` and stores a new span into Heimdall state.
 
@@ -71,7 +71,7 @@ func convertToSlots(vals []hmTypes.Validator) (validatorIndices []uint64) {
 }
 ```
 
-## **Types**
+## Types
 
 Here are the span details that Heimdall uses:
 
@@ -87,7 +87,7 @@ type Span struct {
 }
 ```
 
-## **Parameters**
+## Parameters
 
 The Bor module contains the following parameters:
 
@@ -98,9 +98,9 @@ The Bor module contains the following parameters:
 |ProducerCount         |uint64|4                 |
 
 
-## **CLI Commands**
+## CLI Commands
 
-### **Span propose tx**
+### Span propose tx
 
 ```bash
 heimdallcli tx bor propose-span \
@@ -108,7 +108,7 @@ heimdallcli tx bor propose-span \
 	--chain-id <heimdall-chain-id>
 ```
 
-### **Query current span**
+### Query current span
 
 ```bash
 heimdallcli query bor span latest-span --chain-id <heimdall-chain-id>
@@ -161,7 +161,7 @@ Expected output:
 }
 ```
 
-### **Query span by id**
+### Query span by id
 
 ```bash
 heimdallcli query bor span --span-id <span-id> --chain-id <heimdall-chain-id>
@@ -169,7 +169,7 @@ heimdallcli query bor span --span-id <span-id> --chain-id <heimdall-chain-id>
 
 It prints the result in same format as above.
 
-### **Parameters**
+### Parameters
 
 To print all params;
 
@@ -185,7 +185,7 @@ span_duration: 6400
 producer_count: 4
 ```
 
-## **REST APIs**
+## REST APIs
 
 |Name                  |Method|Endpoint          |
 |----------------------|------|------------------|

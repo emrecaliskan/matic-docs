@@ -12,7 +12,7 @@ keywords:
 image: https://matic.network/banners/matic-network-16x9.png 
 ---
 
-# **Encoder (Pulp)**
+# Encoder (Pulp)
 
 Heimdall needs to verify the transactions of Heimdall on the Ethereum chain. For that it uses RLP encoding to produce special transactions, like checkpoint.
 

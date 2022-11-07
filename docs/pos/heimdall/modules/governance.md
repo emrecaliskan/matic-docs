@@ -13,7 +13,7 @@ keywords:
 image: https://matic.network/banners/matic-network-16x9.png 
 ---
 
-# **Governance**
+# Governance
 
 Heimdall governance works exactly the same as [Cosmos-sdk `x/gov` module](https://docs.cosmos.network/master/modules/gov/).
 
@@ -30,15 +30,15 @@ Source: [https://github.com/maticnetwork/heimdall/blob/develop/gov/endblocker.go
 
 There are different types of proposals that can be implemented in Heimdall. As of now, it supports only the **Param change proposal**.
 
-### **Param change proposal**
+### Param change proposal
 
 Using this type of proposal, validators can change any `params` in any `module` of Heimdall.
 
 Example: change minimum `tx_fees` for the transaction in `auth` module. When the proposal gets accepted, it automatically changes the `params` in Heimdall state. No extra TX is needed. 
 
-## **CLI Commands**
+## CLI Commands
 
-### **Query gov params**
+### Query gov params
 
 ```go
 heimdallcli query gov params --trust-node
@@ -61,7 +61,7 @@ deposit_parmas:
   max_deposit_period: 48h0m0s
 ```
 
-### **Submit proposal**
+### Submit proposal
 
 ```bash
 heimdallcli tx gov submit-proposal \
@@ -91,7 +91,7 @@ heimdallcli tx gov submit-proposal \
 }
 ```
 
-### **Query proposal**
+### Query proposal
 
 To query all proposals:
 
@@ -105,7 +105,7 @@ To query particular proposal:
 heimdallcli query gov proposals 1 --trust-node
 ```
 
-### **Vote on proposal**
+### Vote on proposal
 
 To vote on a particular proposal:
 
@@ -115,7 +115,7 @@ heimdallcli tx gov vote 1 "Yes" --validator-id 1  --chain-id <heimdal-chain-id>
 
 Proposal will be automatically tallied after voting period.
 
-## **REST APIs**
+## REST APIs
 
 |Name                  |Method|Endpoint          |
 |----------------------|------|------------------|
