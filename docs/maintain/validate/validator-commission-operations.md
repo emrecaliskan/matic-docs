@@ -13,7 +13,7 @@ image: https://matic.network/banners/matic-network-16x9.png
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-# **Commission Operations**
+# Commission Operations
 
 You can set up and change your [commission](/docs/maintain/glossary#commission) as a validator.
 
@@ -23,11 +23,11 @@ You are allowed to change the commission rates as many times as you would like.
 
 As a validator, it is one of your responsibilities to inform the community on commission changes. See [Validator Responsibilities](/docs/maintain/validator/responsibilities.md).
 
-## **Set up your commission rate as a validator**
+## Set up your commission rate as a validator
 
 You set up the commission rate as part of your initial validator staking process. See [Validator Staking Operations](validator-staking-operations.md).
 
-## **Change your commission rate**
+## Change your commission rate
 
 You can change your commission rate.
 

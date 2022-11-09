@@ -13,7 +13,7 @@ slug: derivatives
 image: https://matic.network/banners/matic-network-16x9.png
 ---
 
-# **Derivatives**
+# Derivatives
 
 Polygon supports [delegation](/docs/maintain/glossary#delegator) via validator shares. By using this design, it is easier to distribute rewards and slash with scale on the Ethereum mainnet contracts without much computation.
 
@@ -29,7 +29,7 @@ When a validator gets rewarded with more MATIC tokens, the new tokens are added 
 
 Let's say with the current pool of 100 MATIC tokens,  10 MATIC rewards are added to the pool. Since the total supply of VATIC tokens did not change due to the rewards, the exchange rate becomes 1 MATIC per 0.9 VATIC. Now, Delegator D gets more MATIC for the same amount if shares.
 
-## **The flow in the contract**
+## The flow in the contract
 
 `buyVoucher`: This function is attributed when performing a delegation process towards a validator. The delegation `_amount` is first transferred to `stakeManager`, which on confirmation mints delegation shares via `Mint` using the current `exchangeRate`.
 

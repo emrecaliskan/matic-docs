@@ -11,7 +11,7 @@ keywords:
 image: https://matic.network/banners/matic-network-16x9.png
 ---
 
-# **Who is a Validator**
+# Who is a Validator
 
 A validator is a participant in the network who locks up MATIC tokens in the system and runs Heimdall validator and Bor block producer nodes in order to help run the network. Validators stake their MATIC tokens as collateral to work for the security of the network and in exchange for their service, earn rewards.
 
@@ -25,7 +25,7 @@ Those who are interested in securing the network but are not running a full node
 
 :::
 
-## **Overview**
+## Overview
 
 Validators on the Polygon network are selected through an on-chain auction process which happens at regular intervals. These selected validators participate as block producers and verifiers. Once a [checkpoint](/docs/maintain/glossary#checkpoint-transaction) is validated by the participants, updates are made on the parent chain (the Ethereum mainnet) which releases the rewards for validators depending on their stake in network.
 
@@ -38,7 +38,7 @@ Polygon relies on a set of [validators](/docs/maintain/glossary#validator) to se
 [Delegation](/docs/maintain/glossary#delegator) is also recorded in the staking contracts and any update in the validator power or node [signer address](/docs/maintain/glossary#signer-address) or unbonding requests comes into effect when the next checkpoint gets committed.
 
 
-## **End-to-end flow for a Polygon Validator**
+## End-to-end flow for a Polygon Validator
 
 Validators set up their signing nodes, sync data and then stake their tokens on the Ethereum mainnet staking contracts to be accepted as a validator in the current set. If a slot is vacant, the validator is accepted immediately. Otherwise, one needs to go through the replacement mechanism to get a slot.
 
@@ -58,15 +58,15 @@ Validators receive rewards at every checkpoint as per their stake ratio, after d
 
 One can opt out of the system at any time and can withdraw tokens once the unbonding period ends.
 
-## **Economics**
+## Economics
 
 See [Rewards](/docs/maintain/validator/rewards).
 
-## **Setting up a Validator node**
+## Setting up a Validator node
 
 See [Validate](/docs/maintain/validate/validator-index).
 
-## **See also**
+## See Also
 
 * [Validator Responsibilities](/docs/maintain/validate/validator-responsibilities)
 * [Validate](/docs/maintain/validate/validator-index)

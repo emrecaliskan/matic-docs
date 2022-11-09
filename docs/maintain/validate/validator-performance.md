@@ -16,7 +16,7 @@ slug: validator-performance
 image: https://matic.network/banners/matic-network-16x9.png
 ---
 
-# **Performance Metrics Overview**
+# Performance Metrics Overview
 
 :::note Section is being updated
 

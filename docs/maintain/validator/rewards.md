@@ -9,7 +9,7 @@ keywords:
 image: https://matic.network/banners/matic-network-16x9.png 
 ---
 
-# **Rewards**
+# Rewards
 
 For an introduction to Polygon and the Proof of Stake algorithm, see [What Is Proof of Stake](/docs/home/polygon-basics/what-is-proof-of-stake)
 
@@ -23,7 +23,7 @@ Also check the [Validator Responsibilities](/docs/maintain/validate/validator-re
 
 To be a [delegator](/docs/maintain/glossary#delegator), you only need to **delegate $MATIC to a validator**. See [Delegate](/docs/maintain/delegate/delegate).
 
-## **What is the incentive?**
+## What is the incentive?
 
 Polygon allocates 12% of its total supply of 10 billion tokens to fund the staking rewards. This is to ensure that the network is seeded well enough until transaction fees gain traction. These rewards are primarily meant to jump-start the network, while the protocol in the long run is intended to sustain itself on the basis of transaction fees.
 
@@ -50,7 +50,7 @@ Below is a sample snapshot of the expected annual rewards for the first 5 years 
 |Fourth|42%|21%|14%|10.5%|8.4%|7%|6%|5.25%|
 |Fifth|30%|15%|10%|7.5%|6%|5%|4.29%|3.75%|
 
-## **Who gets the incentives?**
+## Who gets the incentives?
 
 Stakers running validator nodes and stakers delegating their tokens toward a validator that they prefer.
 
@@ -60,16 +60,16 @@ The funds belonging to all stakers are locked in a contract deployed on the Ethe
 
 No validator holds custody over delegator tokens.
 
-## **Staking rewards**
+## Staking rewards
 
 The yearly incentive is absolute — irrespective of the overall stake or the target bonding rate in the network, the incentive amount is given out as a reward to all signers periodically.
 
 In Polygon, there is an additional element of committing periodic [checkpoints](/docs/maintain/glossary#checkpoint-transaction) to the Ethereum mainnet. This is a major part of the validator responsibilities and they are incentivized to perform this activity. This constitutes a cost to the validator which is unique to a Layer 2 solution such as Polygon. We strive to accommodate this cost in the validator staking reward payout mechanism as a bonus to be paid to the [proposer](/docs/maintain/glossary#proposer), who is responsible for committing the checkpoint. Rewards minus the bonus is to be shared among all stakers, proposer and [signers](/docs/maintain/glossary#signer-address), proportionally.
 
-## **Encouraging the proposer to include all signatures**
+## Encouraging the proposer to include all signatures
 
 To avail the bonus completely, the [proposer](/docs/maintain/glossary#proposer) must include all signatures in the [checkpoint](/docs/maintain/glossary#checkpoint-transaction). Because the protocol desires ⅔ +1 weight of the total stake, the checkpoint is accepted even with 80% votes. However, in this case, the proposer gets only 80% of the calculated bonus.
 
-## **Transaction fees**
+## Transaction fees
 
 Each block producer at [Bor](/docs/maintain/glossary#bor) is given a certain percentage of the transaction fees collected in each block. The selection of producers for any given span is also dependent on the validator’s ratio in the overall stake. The remaining transaction fees flow through the same funnel as the rewards which get shared among all validators working at the [Heimdall](/docs/maintain/glossary#heimdall) layer.

@@ -13,7 +13,7 @@ keywords:
 image: https://matic.network/banners/matic-network-16x9.png 
 ---
 
-# **What is Proof of Stake?**
+# What is Proof of Stake?
 
 Proof of Stake (PoS) is a category of consensus algorithms for public blockchains that depend on a validator's economic [stake](/docs/maintain/glossary#staking) in the network.
 
@@ -31,7 +31,7 @@ In **BFT-style proof of stake**, validators are **randomly** assigned the rig
 
 For more details, refer [https://github.com/ethereum/wiki/wiki/Proof-of-Stake-FAQ](https://github.com/ethereum/wiki/wiki/Proof-of-Stake-FAQ).
 
-## **See also**
+## See Also
 
 * [Delegator](/docs/maintain/glossary#delegator)
 * [Validator](/docs/maintain/glossary#validator)

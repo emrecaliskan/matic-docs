@@ -15,7 +15,7 @@ slug: heimdall-chain
 image: https://matic.network/banners/matic-network-16x9.png 
 ---
 
-# **Heimdall Chain**
+# Heimdall Chain
 
 Heimdall is is the proof-of-stake verifier layer, which is responsible for [checkpointing](/docs/maintain/glossary#checkpoint-transaction) the representation of the Plasma blocks to the Ethereum mainnet. Heimdall is based on [Tendermint](https://tendermint.com/).
 

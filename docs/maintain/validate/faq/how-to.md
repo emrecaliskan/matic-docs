@@ -13,9 +13,9 @@ image: https://matic.network/banners/matic-network-16x9.png
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-# **Pre-requisites & How Tos**
+# Pre-requisites & How Tos
 
-### **1. How to: New node setup**
+### 1. How to: New node setup
     
 :::note
 
@@ -92,17 +92,17 @@ Otherwise there will be error like below image whenever you try to run `**ansibl
             
             - Provide the copied https endpoint as **eth_rpc_url** in **~/.heimdalld/config/heimdall-config.toml**
             
-### **2. Why do I have to keep ETH in my signer account?**
+### 2. Why do I have to keep ETH in my signer account?
 
 ETH is required on your signer account because for submitting checkpoints to Ethereum, all transactions require ETH to be used as Gas. Hence ETH is required on your Signer Account.
 
-### **3. For a Polygon Validator, do I need to setup a Sentry and Validator node or can I just run the Validator node only?**
+### 3. For a Polygon Validator, do I need to setup a Sentry and Validator node or can I just run the Validator node only?
 
 For the Matic Validator, our ecosystem and architecture demands that you run a Sentry + Validator setup. This is to ensure that your Validator node is not exposed to the public and only your Sentry node is.
 
 Your Sentry node gleans information / blocks from the network and then relays them to the validator for validation. 
     
-### **4. How to migrate to new nodes and then cut over?**
+### 4. How to migrate to new nodes and then cut over?
 
 1. Provision nodes and install all software as per the instructions.
 
@@ -114,15 +114,15 @@ Your Sentry node gleans information / blocks from the network and then relays th
 
 5. Start all services on sentry, then the validator.
     
-### **5. How to check the Heimdall version?**
+### 5. How to check the Heimdall version?
     
 Run: `heimdalld version`
     
-### **6. Which Private Key should we add when we generate validator key?**
+### 6. Which Private Key should we add when we generate validator key?
     
 The Private key to be used is your Wallet's ETH address where your Matic testnet Tokens are stored. You can complete the setup with one public-private key pair tied to the address submitted on the form.
     
-### **7. Where can we find Heimdall account info location?**
+### 7. Where can we find Heimdall account info location?
 
 For binaries:
 
@@ -136,19 +136,19 @@ For Linux package:
 /etc/heimdall/config
 ```
     
-### **8. Which file do we add the API key?**
+### 8. Which file do we add the API key?
     
 Once you have created the API key, you need to add the API key in `heimdall-config.toml` file.
     
-### **9. Which file do we add the persistent_peers?**
+### 9. Which file do we add the persistent_peers?
     
-You can add the persistent_peers in the following file:
+You can add the `persistent_peers` in the following file:
 
 ```jsx
 ~/.heimdalld/config/config.toml
 ```
     
-### **10. How to stop Heimdall and Bor services?**
+### 10. How to stop Heimdall and Bor services?
     
 **For Linux packages**:
 
@@ -167,7 +167,7 @@ Stop Bridge: `pkill heimdalld-bridge`
 
 Stop Bor:  `bash stop.sh`
     
-### **11. How to remove Heimdall and Bor directories?**
+### 11. How to remove Heimdall and Bor directories?
     
 **For Linux packages**: 
 
@@ -181,11 +181,11 @@ Delete Heimdall: `sudo rm -rf ~/.heimdalld/`
 
 Delete Bor: `sudo rm -rf ~/.bor`
     
-### **12. How to reduce cache in Bor?**
+### 12. How to reduce cache in Bor?
     
 The bor supports the --cache parameter you can reduce the cache to avoid running out of memory.
     
-### **13. How to delete the Bor DB data?**
+### 13. How to delete the Bor DB data?
     
 ```    
 bor --datadir  ~/.bor/data removedb

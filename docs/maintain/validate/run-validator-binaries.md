@@ -15,7 +15,7 @@ image: https://matic.network/banners/matic-network-16x9.png
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-# **Run a Validator Node from Binaries**
+# Run a Validator Node from Binaries
 
 :::tip
 Steps in this guide involve waiting for the **Heimdall** and **Bor** services to fully sync.

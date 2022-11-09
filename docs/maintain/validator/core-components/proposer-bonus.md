@@ -14,7 +14,7 @@ slug: proposer-bonus
 image: https://matic.network/banners/matic-network-16x9.png 
 ---
 
-# **Proposer Bonus**
+# Proposer Bonus
 
 In Polygon, there is an additional element of committing periodic [checkpoints](/docs/maintain/glossary#checkpoint-transaction) to the Ethereum mainnet. This is a major part of the validator responsibilities and they are incentivized to perform this activity. This constitutes a cost to the validator which is unique to a Layer 2 solution such as Polygon. We strive to accommodate this cost in the validator staking reward payout mechanism as a bonus to be paid to the [proposer](/docs/maintain/glossary#proposer), who is responsible for committing the checkpoint. Rewards minus the bonus is to be shared among all stakers; proposer and [signers](/docs/maintain/glossary#signer-address), proportionally.
 

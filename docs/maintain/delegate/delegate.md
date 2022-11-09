@@ -14,13 +14,13 @@ slug: delegate
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-# **How to Delegate**
+# How to Delegate
 
 This is a step-by-step guide to help you become a [delegator](/docs/maintain/glossary#delegator) on the Polygon Network.
 
 The only prerequisite is to have your MATIC tokens and ETH on the Ethereum mainnet address.
 
-## **Access the dashboard**
+## Access the dashboard
 
 1. In your wallet (e.g. MetaMask), choose the Ethereum mainnet.
 1. Log in to the [Polygon Wallet dashboard](https://wallet-dev.polygon.technology/staking/).
@@ -32,7 +32,7 @@ If you a validator, use a different non-validating address to log in as delegato
 
 :::
 
-## **Delegate to a Validator**
+## Delegate to a Validator
 
 1. Click **Become a Delegator** or scroll down to a specific validator and click **Delegate**.
 1. Provide the amount of MATIC to delegate.
@@ -40,25 +40,25 @@ If you a validator, use a different non-validating address to log in as delegato
 
 After the delegation transaction completes, you will see the *Delegation Completed* message.
 
-## **View your delegations**
+## View your delegations
 
 To view your delegations, click [My Account](https://staking.polygon.technology/account).
 
-## **Withdraw rewards**
+## Withdraw rewards
 
 1. Click [My Account](https://staking.polygon.technology/account).
 1. Under your delegated validator, click **Withdraw Reward**.
 
 This will withdraw the MATIC token rewards to your Ethereum address.
 
-## **Restake rewards**
+## Restake rewards
 
 1. Click [My Account](https://staking.polygon.technology/account).
 1. Under your delegated validator, click **Restake Reward**.
 
 The will restake the MATIC token rewards to the validator and increase your delegation stake.
 
-## **Unbond from a Validator**
+## Unbond from a Validator
 
 1. Click [My Account](https://staking.polygon.technology/account).
 1. Under your delegated validator, click **Unbond**.
@@ -71,7 +71,7 @@ Your withdrawn stake funds will be locked for 80 [checkpoints](/docs/maintain/gl
 
 The fund locking for the unbonding period is in place to ensure there is no malicious behaviour on the network.
 
-## **Move stake from one node to another node**
+## Move stake from one node to another node
 
 Moving stake from one node to another node is a single transaction. There are no delays or unbonding periods during this event.
 

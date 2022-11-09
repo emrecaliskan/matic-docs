@@ -10,7 +10,7 @@ keywords:
 image: https://matic.network/banners/matic-network-16x9.png
 ---
 
-# **Who is a Delegator**
+# Who is a Delegator
 
 Delegators are token holders who cannot, or do not want to run a [validator](/docs/maintain/glossary#validator) node themselves. Instead, they secure the network by delegating their stake to validator nodes and play a critical role in the system, as they are responsible for choosing validators. They run their delegation transaction on the staking contract on the Ethereum mainnet.
 
@@ -39,7 +39,7 @@ should aim to elect validators that are behaving well.
 
 :::
 
-## **See also**
+## See Also
 
 * [Delegate](/docs/maintain/delegate/delegate)
 * [Validator FAQ](/docs/maintain/validate/faq/validator-faq)

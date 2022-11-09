@@ -14,14 +14,14 @@ slug: key-management
 image: https://matic.network/banners/matic-network-16x9.png 
 ---
 
-# **Key Management**
+# Key Management
 
 Each validator uses two keys to manage validator related activities on Polygon:
 
 * Signer key
 * Owner key
 
-## **Signer Key**
+## Signer Key
 
 The signer key is the address used to sign Heimdall blocks, checkpoints, and other signing related activities.
 
@@ -31,7 +31,7 @@ The signer key cannot manage staking, rewards, or delegations.
 
 The validator must keep ETH on the signer address on the Ethereum mainnet to send [checkpoints](/docs/maintain/glossary#checkpoint-transaction).
 
-## **Owner Key**
+## Owner Key
 
 The owner key is the address used to stake, restake, change the signer key, withdraw rewards and manage delegation related parameters on the Ethereum mainnet. The private key for the owner key must be secure at all costs.
 
@@ -43,6 +43,6 @@ This separation of responsibilities between the signer and the owner keys is don
 
 Both keys are Ethereum compatible addresses and work in the exactl the same manner.
 
-## **Signer Change**
+## Signer Change
 
 See [Change Your Signer Address](/docs/maintain/validate/change-signer-address).

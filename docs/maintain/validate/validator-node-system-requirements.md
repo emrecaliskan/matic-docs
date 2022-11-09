@@ -12,7 +12,7 @@ slug: validator-node-system-requirements
 image: https://matic.network/banners/matic-network-16x9.png 
 ---
 
-# **Node System Requirements**
+# Node System Requirements
 
 The system requirements listed in this section are both for the [sentry](/docs/maintain/glossary#sentry) node and the [validator](/docs/maintain/glossary#validator) node.
 
@@ -22,7 +22,7 @@ The **recommended** system requirements mean the nodes are future-proof. There i
 
 You must always run the sentry node and the validator node on separate machines.
 
-## **Minimum system requirements**
+## Minimum system requirements
 
 * RAM: 32 GB
 * CPU: 8-core
@@ -36,7 +36,7 @@ For storage, make sure the 2 TB SSD storage is extendable.
 
 :::
 
-## **Recommended system requirements**
+## Recommended system requirements
 
 * RAM: 64 GB
 * CPU: 16-core

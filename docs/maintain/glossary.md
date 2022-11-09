@@ -12,21 +12,21 @@ slug: glossary
 image: https://matic.network/banners/matic-network-16x9.png 
 ---
 
-# **Glossary**
+# Glossary
 
-## **Block Producer**
+## Block Producer
 
 A block producer is an active [validator](#validator) selected to act as block producer for a [span](#span).
 
 A block producer is responsible for creating blocks and broadcasting the created blocks to the network.
 
-## **Bor**
+## Bor
 
 A Bor node is a node producing blocks on the Polygon Network.
 
 Bor is based on [Go Ethereum](https://geth.ethereum.org/).
 
-## **Checkpoint Transaction**
+## Checkpoint Transaction
 
 A checkpoint transaction is a transaction containing the Merkle root of blocks of the [Bor](#bor) layer between the checkpoint intervals.
 
@@ -37,31 +37,31 @@ See also:
 * [Heimdall architecture: Checkpoint](/docs/pos/heimdall/checkpoint)
 * [Checkpoint Mechanism](/docs/maintain/validator/core-components/checkpoint-mechanism)
 
-## **Commission**
+## Commission
 
 A commission is the percentage of the rewards taken by [validators](#validator) from the [delegators](#delegator) who stake with the validators.
 
 See also [Validator Commission Operations](/docs/maintain/validate/validator-commission-operations).
 
-## **Delegator**
+## Delegator
 
 The delegator role stakes the MATIC tokens to secure the Polygon Network with existing [validators](#validator) without running the nodes themselves.
 
 See also [Who Is a Delegator](/docs/maintain/polygon-basics/who-is-delegator).
 
-## **Full Node**
+## Full Node
 
 A full node is a fully synced [sentry node](#sentry) running both [Heimdall](#heimdall) and [Bor](#bor).
 
 See also [Full Node Deployment](../develop/network-details/full-node-deployment).
 
-## **Heimdall**
+## Heimdall
 
 A Heimdall node is a node running in parallel to the Ethereum mainnet, monitoring the set of contracts deployed on the Ethereum mainnet, and committing the Polygon Network [checkpoints](#checkpoint-transaction) to the Ethereum mainnet.
 
 Heimdall is based on [Tendermint](https://tendermint.com/).
 
-## **Owner Address**
+## Owner Address
 
 An owner address is the address used to stake, restake, change the signer address, withdraw rewards and manage delegation related parameters on the Ethereum mainnet.
 
@@ -69,19 +69,19 @@ While the [signer key](#signer-address) is kept on the node and is considered a 
 
 See also [Key Management](validator/core-components/key-management.md).
 
-## **Proposer**
+## Proposer
 
 A proposer is the [validator](#validator) selected by the algorithm to propose a new block.
 
 A proposer is also responsible for collecting all signatures for a particular [checkpoint](#checkpoint-transaction) and committing the checkpoint to the Ethereum mainnet.
 
-## **Sentry**
+## Sentry
 
 A sentry node is a node running both the [Heimdall](#heimdall) node and the [Bor](#bor) node to download the data from other nodes on the network and to propagate the [validator](#validator) data on the network.
 
 A sentry node is open to all other sentry nodes on the network.
 
-## **Span**
+## Span
 
 A logically defined set of blocks for which a set of validators is chosen from all the available [validators](#validator).
 
@@ -89,13 +89,13 @@ The selection of each span is decided by at least 2/3 of the validators in terms
 
 See also [Bor Consensus: Span](/docs/pos/bor/consensus/#span).
 
-## **Staking**
+## Staking
 
-Staking is the process of locking up tokens into a deposit to earn the right to validate and produce blocks on a blockchain. Typically staking is done in the native token for the network — for the MATIC token is locked up by validators/stakers in the Polygon Network. Other examples include ETH in ETH 2.0, ATOM in Cosmos, etc.
+Staking is the process of locking up tokens into a deposit to earn the right to validate and produce blocks on a blockchain. Typically staking is done in the native token for the network — for the MATIC token is locked up by validators / stakers in the Polygon Network. Other examples include ETH in ETH 2.0, ATOM in Cosmos, etc.
 
 See also [What Is Proof of Stake](polygon-basics/what-is-proof-of-stake.md).
 
-## **Signer address**
+## Signer address
 
 A signer address is the address of an Ethereum account of the [Heimdall](#heimdall) validator node. The signer address signs and submits the [checkpoint transactions](#checkpoint-transaction).
 
@@ -103,7 +103,7 @@ While the signer key is kept on the node and is considered a **hot** wallet, the
 
 See also [Key Management](validator/core-components/key-management.md).
 
-## **Validator**
+## Validator
 
 The validator role stakes the MATIC tokens and is running both the [Heimdall](#heimdall) node and the [Bor](#bor) node to commit the network checkpoints to the Ethereum mainnet and to produce blocks on the network.
 

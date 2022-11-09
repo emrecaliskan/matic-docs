@@ -14,18 +14,18 @@ image: https://matic.network/banners/matic-network-16x9.png
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-# **Stake on Polygon**
+# Stake on Polygon
 
-## **Prerequisites**
+## Prerequisites
 
-### **Full node set up**
+### Full node set up
 
 Your validator node fully set up and synced. See also:
 
 * [Run a Validator Node with Ansible](run-validator-ansible)
 * [Run a Validator Node from Binaries](run-validator-binaries)
 
-### **Account setup**
+### Account setup
 
 On your validator node, check that the account is set up. To check, run the following command **on the validator node**:
 
@@ -44,7 +44,7 @@ Your output should appear in the following format:
 
 This will display your address and public key for your validator node. Note that **this address must match with your signer address on Ethereum**.
 
-### **Show private key**
+### Show private key
 
 This step is optional.
 
@@ -62,11 +62,11 @@ The following output should appear:
 }
 ```
 
-## **Stake on Polygon**
+## Stake on Polygon
 
 You can stake on Polygon using the [validator dashboard](https://staking.polygon.technology/validators/).
 
-### **Stake using the staking dashboard**
+### Stake using the staking dashboard
 
 1. Access the [validator dashboard](https://staking.polygon.technology/validators/).
 2. Log in with your wallet. MetaMask is the recommended wallet. You have to make sure that you login using the same address where your MATIC tokens are present.
@@ -86,7 +86,7 @@ For the changes to take effect on the [staking dashboard](https://staking.polygo
 
 :::
 
-### **Check the balance**
+### Check the balance
 
 To check the balance of your address:
 
@@ -111,7 +111,7 @@ accountnumber: 0
 sequence: 0
 ```
 
-### **Claim rewards as a validator**
+### Claim rewards as a validator
 
 Once you are set up and staked as a validator, you will earn rewards for performing validator duties. When you perform validator duties dutifully, you get rewarded.
 
@@ -122,7 +122,7 @@ You will see two buttons on your profile:
 * Withdraw Reward
 * Restake Reward
 
-#### **Withdraw Reward**
+#### Withdraw Reward
 
 As a validator, you earn rewards as long as you are performing your validator duties correctly.
 
@@ -130,7 +130,7 @@ Clicking **Withdraw Reward** will get your rewards back to your wallet.
 
 The dashboard will update after 12 block confirmations.
 
-#### **Restake Reward**
+#### Restake Reward
 
 Restaking your rewards is an easy way to increase your stake as a validator.
 

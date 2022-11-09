@@ -14,13 +14,11 @@ slug: validator-index
 image: https://matic.network/banners/matic-network-16x9.png 
 ---
 
-# **Validator Index**
+# Validator Index
 
 :::tip Stay in the know
 
-Keep up with the latest node and validator updates from the Polygon 
-team and the community by subscribing to the 
-[Polygon notification groups](https://polygon.technology/notifications/).
+Keep up with the latest node and validator updates from the Polygon team and the community by subscribing to the [Polygon notification groups](https://polygon.technology/notifications/).
 
 :::
 
@@ -35,7 +33,7 @@ A new auction process for validator replacement will be rolled out.
 
 :::
 
-## **Overview**
+## Overview
 
 Polygon consists of the three following layers:
 
@@ -49,9 +47,9 @@ To be a validator on the Polygon Network, you must run:
 * Validator node — a separate machine running a Heimdall node and a Bor node. A validator node receives the data from and the sends the data to the sentry node.
 * Stake the MATIC tokens in the staking contracts deployed on the Ethereum mainnet.
 
-## **Components**
+## Components
 
-### **Heimdall**
+### Heimdall
 
 Heimdall does the following:
 
@@ -69,7 +67,7 @@ Heimdall is based on Tendermint.
 
 :::
 
-### **Bor**
+### Bor
 
 Bor does the following:
 

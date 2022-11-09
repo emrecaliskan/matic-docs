@@ -13,7 +13,7 @@ image: https://matic.network/banners/matic-network-16x9.png
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-# **Moving Stake**
+# Moving Stake
 
 ## Moving Stake from Foundation nodes to External Nodes
 
@@ -31,7 +31,7 @@ Please note that Moving Stake is only allowed from Foundation node to External n
 
 Also, the Move Stake function is a temporary function developed by the Polygon team to ensure smooth transistioning of funds from the Foundation nodes to External. And will only stay active until the foundation nodes are turned off.
 
-### **How to Move Stake**
+### How to Move Stake
 
 In order to Move stake, first you will need to login to the [Staking UI](https://wallet.polygon.technology/staking) using your Delegator Address. 
 

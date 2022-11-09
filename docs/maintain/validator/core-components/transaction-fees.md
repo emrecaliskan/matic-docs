@@ -13,7 +13,7 @@ slug: transaction-fees
 image: https://matic.network/banners/matic-network-16x9.png 
 ---
 
-# **Transaction Fees**
+# Transaction Fees
 
 Each [block producer](/docs/maintain/glossary#block-producer) on the [Bor](/docs/maintain/glossary#bor) layer is given a certain percentage of the transaction fees collected in each block.
 

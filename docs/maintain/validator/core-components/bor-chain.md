@@ -14,7 +14,7 @@ slug: bor-chain
 image: https://matic.network/banners/matic-network-16x9.png 
 ---
 
-# **Bor Chain**
+# Bor Chain
 
 The Bor node or the block producer implementation is the sidechain operator.
 

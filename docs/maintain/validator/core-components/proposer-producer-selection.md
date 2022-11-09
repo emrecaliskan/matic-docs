@@ -15,13 +15,13 @@ image: https://matic.network/banners/matic-network-16x9.png
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-# **Proposers & Producers Selection**
+# Proposers & Producers Selection
 
 Block Producers for the BOR layer, are a committee selected from the Validators pool on the basis of their stake which happens at regular intervals. These intervals are decided by the Validator's governance with regards to dynasty and network.
 
 The ratio of [stake](/docs/maintain/glossary#staking) specifies the probability to be selected as a member of [block producers](/docs/maintain/glossary#block-producer) committee.
 
-## **Selection Process**
+## Selection Process
 
 Let's suppose we have 3 validators in pool — Alice, Bill, and Clara:
 
@@ -51,7 +51,7 @@ Using the resulting validator set and Tendermint's [proposer selection algorithm
 
 <img src={useBaseUrl("img/validators/producer-proposer.png")} />
 
-Legend:
+**Legend:**
 
 * Dynasty: Time between the end of the last auction and start time of the next auction.
 * Sprint: Time interval for which the block producers committee is selected.

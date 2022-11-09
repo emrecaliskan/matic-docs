@@ -2,7 +2,7 @@
 id: liquid-delegation
 title: Liquid Delegation
 sidebar_label: Liquid Delegation
-description: "How Polygon uses liquid delegation to maintain the network."
+description: How Polygon uses liquid delegation to maintain the network.
 keywords:
   - docs
   - polygon
@@ -13,7 +13,7 @@ slug: liquid-delegation
 image: https://matic.network/banners/matic-network-16x9.png
 ---
 
-# **Liquid Delegation**
+# Liquid Delegation
 
 In a traditional Proof of Stake mechanism, the blockchain keeps track of a set of validators, And anyone can join this rank or right to validate transactions by sending a special type of transaction which stake their coins(in Ethereum's case, ether) and locks up into a deposit. The process of creating and agreeing to new blocks is then done through a consensus algorithm by all current validators.
 
@@ -21,13 +21,13 @@ They lock up part of their stake for a certain amount of time (like a security d
 
 Incentives for participants are Staking rewards.
 
-## **Delegation**
+## Delegation
 
 Staking can be expensive and makes barrier of entry higher and in which case it promotes rich getting richer. We want everyone to participate in network security and get token appreciation. The only alternative is to participate in staking pool like mining pool in which you need to trust validators. That's why we think that keeping delegation in protocol is best way to go for new delegators. Since capital, rewards is protected and open via in-protocol mech.
 
 Delegator's can participate in validation without hosting a full node. But by staking with validators, they can earn reward and strengthen the network by paying a small commission fee (depends on Validator) to a validator of their choice.
 
-## **Limitation of Traditional Delegator and Validator**
+## Limitation of Traditional Delegator and Validator
 
 Capital lockup cost for both validators and delegators is high due to Proof of Stake protocol design.
 
@@ -37,11 +37,11 @@ In case of delegators the amount locked is assumed to be in smaller chunks so we
 
 Also, locking up X ether in a deposit is not free; it entails a sacrifice of optionality for the ether holder. Right now, if you have 1000 ether, you can do whatever you want with it. If you lock it up in a deposit, then it's stuck there for months in order to prevent attacks like [nothing at stake](https://github.com/ethereum/wiki/wiki/Proof-of-Stake-FAQ#what-is-the-nothing-at-stake-problem-and-how-can-it-be-fixed) and punish validators for their bad participation.
 
-## **In-Protocol vs Application Layer**
+## In-Protocol vs Application Layer
 
 Application level staking liquidation has trust problem, Protocol level staking liquidation is much more appreciated due to the fact that any new actor can trust it (which attracts more capital, even from smaller actors / delegators).
 
-## **Polygon's Solution for Delegation**
+## Polygon's Solution for Delegation
 
 While exploring delegation we realised that delegation needs to be in-protocol in order to have more trust from delegators.
 
@@ -51,7 +51,7 @@ Thinking in terms of making is share of validator pool is great idea and since P
 
 As of now each validator has their own VMatic (i.e. for validator Ashish there will be AMatic token) because each validator has different performance (rewards and commission rate). Delegators can buy multiple validator share and hedge their risk towards poor performance of particular validator.
 
-## **Advantages**
+## Advantages
 
 - Since our design follows ERC20 like interface in delegation implementation Defi applications can be build on top of it easily.
 - Delegated tokens can be used in lending protocols.
@@ -66,11 +66,11 @@ Future scope:
 
 Given above design available in-protocol, validators can always implement their own similar mechanisms and stake via a contract which won't be available in Polygon staking UI.
 
-## **Future Goals**
+## Future Goals
 
 Things like interchain / cross-chain via Cosmos hub and Everett B-harvest design.
 
-## **Resources**
+## Resources
 
 - [Vitalik's pos design](https://medium.com/@VitalikButerin/a-proof-of-stake-design-philosophy-506585978d51)
 - [Intro to Staking Derivatives](https://medium.com/lemniscap/an-intro-to-staking-derivatives-i-a43054efd51c)

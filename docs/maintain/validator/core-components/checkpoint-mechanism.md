@@ -14,7 +14,7 @@ slug: checkpoint-mechanism
 image: https://matic.network/banners/matic-network-16x9.png 
 ---
 
-# **Checkpoint Mechanism**
+# Checkpoint Mechanism
 
 :::info Polygon is not a Layer 1 platform
 

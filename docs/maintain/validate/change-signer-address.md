@@ -12,16 +12,16 @@ image: https://matic.network/banners/matic-network-16x9.png
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-# **Change Your Signer Address**
+# Change Your Signer Address
 
 For information on what a [signer address](/docs/maintain/glossary#signer-address) is, see 
 [Key Management](/docs/maintain/validator/core-components/key-management).
 
-## **Prerequisites**
+## Prerequisites
 
 Make sure your new validator node is fully synced and is running with the new signer address.
 
-## **Change the Signer address**
+## Change the Signer Address
 
 This guide refers to your current validator node as Node 1 and your new validator node as Node 2.
 

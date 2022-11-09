@@ -11,7 +11,7 @@ slug: validator-responsibilities
 image: https://matic.network/banners/matic-network-16x9.png
 ---
 
-# **Validator Responsibilties**
+# Validator Responsibilties
 
 A blockchain validator is someone who is responsible for validating transactions within a blockchain. On the Polygon Network, any participant can be qualified to become a Polygon's validator by running a full node to earn rewards and collect transaction fees. To ensure the good participation by validators, they lock up at least 1 MATIC token as a stake in the ecosystem.
 
@@ -22,7 +22,7 @@ For a detailed description on what a validator is, see [Validator](/docs/maintai
 
 :::
 
-## **Responsibilities**
+## Responsibilities
 
 Any [validator](/docs/maintain/glossary#validator) on the Polygon Network has the following responsibilities:
 
@@ -41,7 +41,7 @@ Any [validator](/docs/maintain/glossary#validator) on the Polygon Network has th
 * Stake network tokens and run validator nodes to join the system as a validator.
 * Earn staking rewards for validating state transitions on the blockchain.
 
-### **Technical node operations**
+### Technical node operations
 
 The following technical node operations are done automatically by the nodes:
 
@@ -63,9 +63,9 @@ The following technical node operations are done automatically by the nodes:
   * A state-sync transaction gets called on a Polygon smart contract and the DApp can get the value on Bor via a function call on Bor itself.
   * A similar mechanism is in place for sending state from Polygon to Ethereum. See also [State Sync Mechanism](/docs/pos/state-sync/state-sync).
 
-### **Operations**
+### Operations
 
-#### **Maintain high uptime**
+#### Maintain high uptime
 
 A node's uptime on the Polygon network is based on the number of [checkpoint transactions](/docs/maintain/glossary#checkpoint-transaction) that the validator node has signed.
 
@@ -75,18 +75,18 @@ Failure to sign a checkpoint transction results in the decrease of your validato
 
 The process of signing the checkpoint transactions is automated. To ensure your validator node is signing all valid checkpoint transactions, you must maintain and monitor your node health.
 
-#### **Check daily node services and processes**
+#### Check daily node services and processes
 
 You must check daily the services and processes associated with [Heimdall](/docs/maintain/glossary#heimdall) and [Bor](/docs/maintain/glossary#bor).
 
-#### **Run node monitoring**
+#### Run node monitoring
 
 You must run either:
 
 * Grafana Dashboards provided by Polygon. See GitHub repository: [Matic-Jagar setup](https://github.com/vitwit/matic-jagar).
 * Or your own monitoring tools for the [validator](/docs/maintain/glossary#validator) and [sentry](/docs/maintain/glossary#sentry) nodes.
 
-#### **Keep an ETH balance**
+#### Keep an ETH balance
 
 You must maintain an adequate amount of ETH on your validator [signer address](/docs/maintain/glossary#signer-address) on the Ethereum mainnet.
 
@@ -101,15 +101,15 @@ Not maintaining an adequate amount of ETH on the signer address will result in:
 * Delays in the finality of transactions included in the checkpoints.
 * Delays in subsequent checkpoint transactions.
 
-### **Delegation**
+### Delegation
 
-#### **Be open for delegation**
+#### Be open for delegation
 
 All validators must be open for delegation from the community.
 
 Each validator has the choice of setting their own commission rate. There is no upper limit to the commission rate.
 
-#### **Communicate commission rates**
+#### Communicate commission rates
 
 It is the moral duty of the validators to communicate the commission rates and the commission rate changes to the community.
 
@@ -118,9 +118,9 @@ The preferred platforms to communicate the commission rates are:
 * [Discord](https://discord.com/invite/0xPolygon)
 * [Forum](https://forum.polygon.technology/)
 
-### **Communication**
+### Communication
 
-#### **Communicate issues**
+#### Communicate issues
 
 Communicating issues as early as possible ensures that the community and the Polygon team can rectify the problems as soon as possible.
 
@@ -130,7 +130,7 @@ The preferred platforms to communicate the commission rates are:
 * [Forum](https://forum.polygon.technology/)
 * [GitHub](https://github.com/maticnetwork)
 
-#### **Provide feedback and suggestions**
+#### Provide feedback and suggestions
 
 At Polygon, we value your feedback and suggestions on any aspect of the validator ecosystem.
 
