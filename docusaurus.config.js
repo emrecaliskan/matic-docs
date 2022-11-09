@@ -1,13 +1,37 @@
+const math = require('remark-math');
+const katex = require('rehype-katex');
+
 module.exports = {
   title: "Polygon Technology | Documentation",
   tagline: "Welcome to Polygon developer documentation",
-  url: "https://docs.polygon.technology/",
+  url: "https://wiki.polygon.technology",
   baseUrl: "/",
   favicon: "img/polygon/polygon-logo.svg",
   organizationName: "Polygon Technology",
   projectName: "matic-docs",
   customFields: {
     description: "Build your next blockchain app on Polygon.",
+  },
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'ko'],
+    path: 'i18n',
+    localeConfigs: {
+      en: {
+        label: 'English',
+        direction: 'ltr',
+        htmlLang: 'en-US',
+        calendar: 'gregory',
+        path: 'en',
+      },
+      ko: {
+        label: '한국어',
+        direction: 'ltr',
+        htmlLang: 'ko-KR',
+        calendar: 'gregory',
+        path: 'ko',
+      },
+    },
   },
   plugins: [
     [
@@ -54,7 +78,7 @@ module.exports = {
             to: '/docs/develop/wallets/getting-started',
             from: '/docs/develop/fiat-ramps'
           },
-          {  
+          {
             to: '/docs/develop/network-details/full-node-binaries',
             from: '/docs/integrate/full-node-binaries',
           },
@@ -63,9 +87,13 @@ module.exports = {
             from: '/docs/integrate/full-node-deployment',
           },
           {
-            to: '/docs/develop/metamask/overview',
-            from: '/docs/develop/wallets/metamask',
+            to: '/docs/develop/wallets/metamask',
+            from:'/docs/develop/metamask/overview',
           },
+          {
+            to: '/docs/develop/wallets/getting-started',
+            from: '/docs/develop/cexs-wallets/cexs',
+          }
         ],
         createRedirects: function (existingPath) {
           if (existingPath.startsWith('/docs/validate/')) {
@@ -123,7 +151,7 @@ module.exports = {
           items: [
           {
               label: "Get Started",
-              href: "https://docs.polygon.technology/docs/develop/getting-started/"
+              href: "https://wiki.polygon.technology/docs/develop/getting-started/"
           },
           {
               label: "Advocate Program",
@@ -200,18 +228,7 @@ module.exports = {
     },
     copyright: `Copyright © ${new Date().getFullYear()} Polygon Technology`,
     },
-    announcementBar: {
-      id: "support_us",
-      content:
-        '🎉 Polygon Mainnet <a target="_blank" rel="noopener noreferrer" href="/docs/develop/network-details/network"/>is open for developers 🎉! ',
-      backgroundColor: "#8247e5", // Defaults to `#fff`
-      textColor: "#fff", // Defaults to `#000`
-    },
-    // googleAnalytics: {
-    //   trackingID: "UA-141789564-1",
-    //   anonymizeIP: true,
-    // },
-    image: "https://matic.network/banners/matic-network-16x9.png",
+    image: 'img/polygon-wiki.png',
     prism: {
       theme: require("prism-react-renderer/themes/github"),
       darkTheme: require("prism-react-renderer/themes/dracula"),
@@ -222,16 +239,8 @@ module.exports = {
       indexName: "matic_developer",
       appId: '16JCDEHCCN',
       apiKey: "757c19b23127e9c6959da7f13b71cfab",
-      contextualSearch: false,
+      contextualSearch: true,
       algoliaOptions: {},
-    },
-    announcementBar: {
-      id: 'doc revamp message',
-      content:
-        'The team is revamping the docs site.',
-      backgroundColor: '#AA84ED',
-      textColor: '#0A0B0D',
-      isCloseable: true,
     },
     navbar: {
       hideOnScroll: true,
@@ -241,7 +250,7 @@ module.exports = {
         srcDark: "/img/polygon/polygon-logo.webp",
         // width: 100,
         // height: 500,
-        // href: 'https://docs.polygon.technology/', // default to siteConfig.baseUrl
+        // href: 'https://wiki.polygon.technology/', // default to siteConfig.baseUrl
         target: "_self", // by default, this value is calculated based on the `href` attribute (the external link will open in a new tab, all others in the current one)
       },
       items: [
@@ -303,7 +312,14 @@ module.exports = {
           position: "right",
           items: [
                   {
-                    href: 'https://discord.gg/tCmCbEff66',
+                    to: "docs/contribute/orientation/",
+                    label: "Contribute to Wiki",
+                    target: '_blank',
+                    rel: null,
+                    activeBasePath: "docs/contribute",
+                  },
+                  {
+                    href: 'https://discord.com/invite/0xPolygon',
                     label: 'Discord',
                     target: '_blank',
                     rel: null,
@@ -333,6 +349,12 @@ module.exports = {
                     rel: null,
                   },
                   {
+                    label: "Get Updates",
+                    href: 'https://polygon.technology/notifications/',
+                    target: '_blank',
+                    rel: null,
+                  },
+                  {
                     href: 'https://polygon.technology/community/',
                     label: 'View all communities',
                     target: '_blank',
@@ -342,8 +364,15 @@ module.exports = {
         },
         {
           label: "Support",
-          href: "https://polygon.technology/developer-support-program/",
           position: "right",
+          items: [
+            {
+              href: 'https://support.polygon.technology/support/home',
+              label: 'End-user support',
+              target: '_blank',
+              rel: null,
+            }
+          ]
         },
         {
           label: "FAQs",
@@ -366,14 +395,14 @@ module.exports = {
                     label: 'Nightfall FAQ',
                     target: '_blank',
                     rel: null,
+                  },
+                  {
+                    to: 'docs/edge/faq/validators/',
+                    label: 'Edge FAQ',
+                    target: '_blank',
+                    rel: null,
                   }
                 ],
-        },
-        {
-          to: "docs/contribute/orientation/",
-          label: "Contribute to the Wiki",
-          position: "right",
-          activeBasePath: "docs/contribute",
         },
         {
           href: "https://github.com/maticnetwork",
@@ -407,6 +436,8 @@ module.exports = {
           path: "docs",
           showLastUpdateAuthor: false,
           showLastUpdateTime: true,
+          remarkPlugins: [math],
+          rehypePlugins: [[katex, {strict: false, throwOnError: true,globalGroup: true}]],
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),

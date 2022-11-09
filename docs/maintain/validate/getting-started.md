@@ -9,12 +9,21 @@ keywords:
   - validator
   - maintain
   - architecture
+  - Validator Index
 slug: validator-index
 image: https://matic.network/banners/matic-network-16x9.png 
 ---
 
+# Validator Index
+
+:::tip Stay in the know
+
+Keep up with the latest node and validator updates from the Polygon team and the community by subscribing to the [Polygon notification groups](https://polygon.technology/notifications/).
+
+:::
+
 Validators are the key actor in maintaining the Polygon network. Validators run a full node and secure 
-the network by staking MATIC to produce blocks, validate and participate in PoS consensus.
+the network by staking $MATIC to produce blocks, validate and participate in PoS consensus.
 
 :::info
 
@@ -50,9 +59,7 @@ Heimdall does the following:
 
 Heimdall is based on Tendermint.
 
-:::note
-
-See also:
+:::note See Also
 
 * GitHub repository: [Heimdall](https://github.com/maticnetwork/heimdall)
 * GitHub repository: [Staking contracts](https://github.com/maticnetwork/contracts/tree/master/contracts/staking)
@@ -66,13 +73,9 @@ Bor does the following:
 
 * Produces blocks on the Polygon Network.
 
-Bor is based on Go Ethereum.
+Bor is the Block producer node and layer for the Polygon Network. It is based on Go Ethereum. Blocks produced on Bor are validated by Heimdall nodes.
 
-Bor is the Block producer node and layer for the Polygon Network. Blocks produced on Bor are validated by Heimdall nodes.
-
-:::note
-
-See also:
+:::note See Also
 
 * GitHub repository: [Bor](https://github.com/maticnetwork/bor)
 * Blog post: [Heimdall and Bor](https://blog.polygon.technology/heimdall-and-bor/)
@@ -81,16 +84,16 @@ See also:
 
 This section guides you through the following topics:
 
-* [Validator responsibilities](validator-responsibilities).
+* [Validator responsibilities](validator-responsibilities.md)
 * Joining the network as a validator:
-  * [Start and run the nodes with Ansible](run-validator-ansible).
-  * [Start and run the nodes with binaries](run-validator-binaries).
-  * [Stake as a validator](validator-staking-operations).
+  * [Start and run the nodes with Ansible](run-validator-ansible.md)
+  * [Start and run the nodes with binaries](run-validator-binaries.md)
+  * [Stake as a validator](validator-staking-operations.md)
 * Maintaining your validator nodes:
-  * [Change the signer address](change-signer-address).
-  * [Change the commission](validator-commission-operations).
+  * [Change the signer address](change-signer-address.md)
+  * [Change the commission](validator-commission-operations.md)
 
 Community assistance:
 
-* [Discord](https://discord.gg/polygon)
+* [Discord](https://discord.com/invite/0xPolygon)
 * [Forum](https://forum.polygon.technology/)

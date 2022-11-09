@@ -12,6 +12,7 @@ keywords:
   - how-to
   - extrinsic
   - explorer
+  - use
 image: https://matic.network/banners/matic-network-16x9.png 
 slug: avail-quick-start
 ---
@@ -19,10 +20,11 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-:::note We are working on improving many of the current features
+# How to use Polygon Avail
 
-We appreciate you using our testnet and encourage your valuable feedback
-through one of our **[community channels](https://polygon.technology/community/)**.
+:::note 
+
+We are working on improving many of the current features. We appreciate you using our testnet and encourage your valuable feedback through one of our **[community channels](https://polygon.technology/community/)**.
 
 :::
  
@@ -86,7 +88,7 @@ access your account.
 On the Avail Explorer, click on the icon next to your account name to
 copy your address.  Alternatively, you can copy the address manually.
 
-<img src={useBaseUrl("img/avail/account-icon.png")} width="100%" height="100%"/> 
+<img src={useBaseUrl("img/avail/account-icon.png")} align= "center" width="100%" height="100%"/> 
 
 Head over to the [Polygon faucet](https://faucet.polygon.technology).
 

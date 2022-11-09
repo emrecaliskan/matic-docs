@@ -1,7 +1,7 @@
 ---
 id: run-validator-binaries
 title: Run a Validator Node from Binaries
-description: Use binaries to set up your validator node on the Polygon Network.
+description: Use binaries to set up your validator node
 keywords:
   - docs
   - matic
@@ -15,9 +15,11 @@ image: https://matic.network/banners/matic-network-16x9.png
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+# Run a Validator Node from Binaries
+
 :::tip
 Steps in this guide involve waiting for the **Heimdall** and **Bor** services to fully sync.
-This process takes several days to complete. Alternatively, you can use a maintained snapshot, which will reduce the sync time to a few hours. For detailed instructions, see [Snapshot Instructions for Heimdall and Bor](../../develop/network-details/snapshot-instructions-heimdall-bor).
+This process takes several days to complete. Alternatively, you can use a maintained snapshot, which will reduce the sync time to a few hours. For detailed instructions, see [<ins>Snapshot Instructions for Heimdall and Bor</ins>](/docs/develop/network-details/snapshot-instructions-heimdall-bor).
 
 For snapshot download links, see [Polygon Chains Snapshots](https://snapshots.matic.today/).
 
@@ -27,15 +29,13 @@ There is limited space for accepting new validators. New validators can only joi
 
 This guide will walk you through running a Polygon validator node from binaries.
 
-For system requirements,
-follow the [Validator Node System Requirements](validator-node-system-requirements.md) guide.
+For system requirements, follow the [Validator Node System Requirements](validator-node-system-requirements.md) guide.
 
-If you would like to start and run the validator node through Ansible,
-see [Run a Validator Node with Ansible](run-validator-ansible.md).
+If you would like to start and run the validator node through Ansible, see [Run a Validator Node with Ansible](run-validator-ansible.md).
 
 ## Prerequisites
 
-* Two machines — one [sentry](../glossary#sentry) and one [validator](../glossary#validator).
+* Two machines — one [sentry](/docs/maintain/glossary#sentry) and one [validator](/docs/maintain/glossary#validator).
 * `build-essential` installed on both the sentry and the validator machines.
 
   To install:
@@ -55,7 +55,22 @@ see [Run a Validator Node with Ansible](run-validator-ansible.md).
   ```
 
 * RabbitMQ installed on both the sentry and the validator machines.
-  See [Downloading and Installing RabbitMQ](https://www.rabbitmq.com/download.html).
+
+  Here are the commands to install RabbitMQ:
+
+  ```sh
+  sudo apt-get update
+  sudo apt install build-essential
+  sudo apt install erlang
+  wget https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.10.8/rabbitmq-server_3.10.8-1_all.deb
+  sudo dpkg -i rabbitmq-server_3.10.8-1_all.deb
+
+  ```
+  :::tip
+
+  Check more information about downloading and installing RabbitMQ [<ins>here</ins>](https://www.rabbitmq.com/download.html).
+
+  :::
 
 ## Overview
 
@@ -84,7 +99,7 @@ Install the binaries for both on the sentry and validator machines.
 [Heimdall](../validator/core-components/heimdall-chain.md) is the proof-of-stake verifier layer
 responsible for checkpointing the representation of the Plasma blocks to the Ethereum mainnet.
 
-The latest version, [Heimdall v.0.2.9](https://github.com/maticnetwork/heimdall/releases/tag/v0.2.9), contains a few enhancements such as:
+The latest version, [Heimdall v.0.2.12](https://github.com/maticnetwork/heimdall/releases/tag/v0.2.12), contains a few enhancements such as:
 1. Restricting data size in state sync txs to:
     * **30Kb** when represented in **bytes**
     * **60Kb** when represented as **string**.
@@ -116,13 +131,14 @@ where `RELEASE_TAG` is the tag of the release version that you install.
 For instance:
 
 ```sh
-git checkout v0.2.9
+git checkout v0.2.12
 ```
 
 Once you are on the correct release, install Heimdall:
 
 ```sh
 make install
+source ~/.profile
 ```
 
 Check the Heimdall installation:
@@ -375,7 +391,7 @@ You will first start the Heimdall service. Once the Heimdall service syncs, you 
 As mentioned earlier, the Heimdall service takes several days to sync from scratch fully.
 
 Alternatively, you can use a maintained snapshot, which will reduce the sync time to a few hours.
-For detailed instructions, see [Snapshot Instructions for Heimdall and Bor](https://forum.matic.network/t/snapshot-instructions-for-heimdall-and-bor/2278).
+For detailed instructions, see [<ins>Snapshot Instructions for Heimdall and Bor</ins>](https://forum.polygon.technology/t/snapshot-instructions-for-heimdall-and-bor/9233).
 
 For snapshot download links, see [Polygon Chains Snapshots](https://snapshots.matic.today/).
 
@@ -534,7 +550,7 @@ heimdallcli generate-validatorkey ETHEREUM_PRIVATE_KEY
 
 where
 
-* ETHEREUM_PRIVATE_KEY — your Ethereum wallet address.
+* ETHEREUM_PRIVATE_KEY — your Ethereum wallet’s private key.
 
 This will generate `priv_validator_key.json`. Move the generated JSON file to the Heimdall configuration
 directory:
@@ -556,7 +572,7 @@ heimdallcli generate-keystore ETHEREUM_PRIVATE_KEY
 
 where
 
-* ETHEREUM_PRIVATE_KEY — your Ethereum private key.
+* ETHEREUM_PRIVATE_KEY — your Ethereum wallet’s private key.
 
 When prompted, set up a password to the keystore file.
 
@@ -600,7 +616,7 @@ will start the Bor service on the validator machine.
 The Heimdall service takes several days to sync from scratch fully.
 
 Alternatively, you can use a maintained snapshot, which will reduce the sync time to a few hours.
-For detailed instructions, see [Snapshot Instructions for Heimdall and Bor](https://forum.matic.network/t/snapshot-instructions-for-heimdall-and-bor/2278).
+For detailed instructions, see [<ins>Snapshot Instructions for Heimdall and Bor</ins>](https://forum.polygon.technology/t/snapshot-instructions-for-heimdall-and-bor/9233).
 
 For snapshot download links, see [Polygon Chains Snapshots](https://snapshots.matic.today/).
 
@@ -675,7 +691,7 @@ journalctl -u bor.service -f
 ## Health Checks with the Community
 
 Now that your sentry and validator nodes are in sync and running, head over to
-[Discord](https://discord.gg/polygon) and ask the community to health-check your nodes.
+[Discord](https://discord.com/invite/0xPolygon) and ask the community to health-check your nodes.
 
 ## Next Steps: Staking
 
