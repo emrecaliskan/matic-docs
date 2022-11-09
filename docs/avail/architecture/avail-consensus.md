@@ -16,9 +16,9 @@ image: https://matic.network/banners/matic-network-16x9.png
 slug: avail-consensus
 ---
 
-# **Avail's Consensus**
+# Avail's Consensus
 
-## **Data Availability Committees**
+## Data Availability Committees
 
 Until now, the approach to maintaining DA solutions has generally been through a DAC (data availability committee). A DAC is responsible for posting signatures back to the main chain and attesting to the availability of off-chain data. The DAC must ensure that data is readily available.
 
@@ -26,7 +26,7 @@ Through a DAC, scaling solutions rely on a DAC to reach a Validium. The issue wi
 
 Avail is not a DAC, but an actual blockchain network with its consensus mechanism, and has its own set of validator nodes and block producers.
 
-## **Proof of Stake**
+## Proof of Stake
 
 :::caution Current validators
 
@@ -47,11 +47,11 @@ Avail uses NPoS with a modification in block verification. The actors involved a
 
 Light clients can also contribute to data availability on Avail. Avail's consensus requires that two-thirds plus 1 of the validators reach consensus for validity.
 
-## **Nominators**
+## Nominators
 
 Nominators can choose to back a set of candidate Avail validators with their stake. Nominators will nominate those validators who they feel will effectively provide data availability.
 
-## **Difference between DPoS and NPoS**
+## Difference between DPoS and NPoS
 
 At face value, delegation and nomination seem like the same action, especially from an avid staker's point of view. However, the differences lay in the underlying consensus mechanisms and how validator selection occurs.
 

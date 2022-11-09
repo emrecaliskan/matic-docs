@@ -14,9 +14,9 @@ image: https://matic.network/banners/matic-network-16x9.png
 slug: avail-system-overview
 ---
 
-# **System Overview**
+# System Overview
 
-## **Modularity**
+## Modularity
 
 Currently, monolithic blockchain architectures like that of Ethereum cannot efficiently handle the execution, settlement, and data availability. 
 
@@ -32,11 +32,11 @@ Although Avail is based on the Substrate codebase, it includes modifications to 
 
 Avail provides a high guarantee of data availability to any light client, but does not make higher guarantees to light clients about DA than any other network. Avail focuses on making it possible to prove that block data is available without downloading the whole block by leveraging Kate polynomial commitments, erasure coding, and other technologies to allow light clients (which download only the _headers_ of the chain) to efficiently and randomly sample small amounts of the block data to verify its full availability. However, there are fundamentally different primitives than fraud-proof-based DA systems, which are explained [here](https://blog.polygon.technology/the-data-availability-problem-6b74b619ffcc/).
 
-### **Providing data availability**
+### Providing data availability
 
 The DA guarantee is something a client determines for itself; it does not have to trust nodes. As the number of light clients grows, they collectively sample the entire block (even though each client only samples a small percentage). Light clients eventually form a P2P network amongst themselves; thus, after a block has been sampled, it becomes highly available — that is, even if the nodes were to go down (or attempt to censor a block), the light clients would be able to re-construct the block by sharing the pieces amongst themselves.
 
-### **Enabling the next set of solutions**
+### Enabling the next set of solutions
 
 Avail will take rollups to the next level as chains can allocate their data availability component to Avail. Avail also provides an alternative way to bootstrap any standalone chain, as chains can offload their data availability. There are, of course, trade-offs that are made with different modularity approaches, but the overall goal is to maintain high security while being able to scale.
 
@@ -60,9 +60,9 @@ Avail guarantees that block data is available but does not care about what that 
 
 Storage systems, on the other hand, are designed to store data for long periods, and include incentivization mechanisms to encourage users to store data.
 
-## **Validation**
+## Validation
 
-### **Peer Validation**
+### Peer Validation
 
 Three types of peers typically compose an ecosystem:
 
@@ -103,11 +103,11 @@ This allows applications that want to use Avail to embed the DA light client. Th
 
 The Avail ecosystem will also feature bridges to enable specific use-cases. One such bridge being designed at this time is an _attestation bridge_ that will post attestations of data available on Avail to Ethereum, thus allowing the creation of validiums.
 
-## **State verification**
+## State verification
 
-### **Block verification &rarr; DA verification**
+### Block verification &rarr; DA verification
 
-#### **Validators**
+#### Validators
 
 Instead of Avail validators verifying the application state, they concentrate on ensuring the availability of posted transaction data and providing transaction ordering. A block is considered valid only if the data behind that block is available.
 
@@ -116,7 +116,7 @@ Avail validators take on incoming transactions, order them, construct a candidat
 Other validators verify the block by ensuring the block is well formed, the KZG commitments 
 check out, the data is there, etc.
 
-#### **Clients**
+#### Clients
 
 Requiring data to be available prevents block producers from releasing block headers without releasing the data behind them, as this prevents clients from reading the transactions necessary to compute the state of their applications. As with other chains, Avail uses data availability verification to address this through DA checks which utilize erasure codes; these checks are heavily used in data redundancy design.
 
@@ -127,7 +127,7 @@ Erasure codes effectively duplicate data so that if part of a block is suppresse
 
 What is unique about Avail is that the chain design allows **anyone** to check DA without needing to download the data. DA checks require each light client to sample a minimal number of random chunks from each block in the chain. A set of light clients can collectively sample the entire blockchain in this manner. Consequently, the more non-consensus nodes there are, the greater the block size (and throughput) can securely exist. Meaning, non-consensus nodes can contribute to the throughput and security of the network.
 
-### **Transaction settlement**
+### Transaction settlement
 
 Avail will use a settlement layer built with Polygon Edge. The settlement layer provides an EVM-compatible blockchain for rollups to store their data and perform dispute resolution. The settlement layer utilizes Polygon Avail for its DA. When rollups are using a settlement layer, they also inherit all the DA properties of Avail.
 
@@ -139,7 +139,7 @@ There are different ways to use Avail, and the validiums will not use the settle
 
 Avail offers data hosting and ordering. The execution layer will likely come from multiple off-chain scaling solutions or legacy execution layers. The settlement layer takes on the verification and dispute resolution component.
 
-## **Resources**
+## Resources
 
 - [Introduction to Avail by Polygon](https://medium.com/the-polygon-blog/introducing-avail-by-polygon-a-robust-general-purpose-scalable-data-availability-layer-98bc9814c048).
 - [Polygon Talks: Polygon Avail](https://www.youtube.com/watch?v=okqMT1v3xi0)
