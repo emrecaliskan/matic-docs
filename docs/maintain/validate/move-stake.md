@@ -59,7 +59,7 @@ Now after choosing your validator that you want to delegate to, click on the "De
 
 Here you would see an Amount field which would automatically populate with entire amount for Delegation. You can also use a partial amount to delegate to a validator. 
 
-For example, if you have delegated 100 $MATIC tokens to Foundation Node 1 and now you want to move your stake from the foundation node to an external node, you can delegate a partial amount to the external node of your choice, lets say 50 $MATIC tokens. The rest of the 50 $MATIC tokens will stay on Foundation node 1. You can then choose to either delegate the rest of the 50 tokens to another external node or the same external node.
+For example, if you have delegated 100 MATIC tokens to Foundation Node 1 and now you want to move your stake from the foundation node to an external node, you can delegate a partial amount to the external node of your choice, lets say 50 MATIC tokens. The rest of the 50 MATIC tokens will stay on Foundation node 1. You can then choose to either delegate the rest of the 50 tokens to another external node or the same external node.
 
 Once you have entered the amount you can then click on Stake Funds button. This will then ask for confirmation on your Metamask to sign the address.
 

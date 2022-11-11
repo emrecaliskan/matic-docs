@@ -95,7 +95,7 @@ Purpose of reStaking is that since delegator's validator has now more active sta
 function unStakeClaimTokens()
 ```
 
-Once withdrawal period is over, delegators who've sold their shares can claim their $MATIC tokens. Must transfer tokens to user.
+Once withdrawal period is over, delegators who've sold their shares can claim their MATIC tokens. Must transfer tokens to user.
 
 ### updateCommissionRate
 

@@ -22,7 +22,7 @@ The staking dashboard URL is https://staking.polygon.technology/.
 
 ### What is the minimum stake amount?
 
-There is no minimum stake amount to delegate. However, you can always start with 1 $MATIC token.
+There is no minimum stake amount to delegate. However, you can always start with 1 MATIC token.
 
 ### How many rewards will I get if I delegate?
 

@@ -20,7 +20,7 @@ Heimdall is Polygon Proof-of-Stake Verifier layer, which is responsible for chec
 
 The main chain Stake Manager contract works in conjunction with the Heimdall node to act as the trustless stake management mechanism for the PoS engine, including selecting the validator set, updating validators, etc. Since staking is actually done on the Ethereum smart contract, we do not rely only on validator honesty and instead inherit Ethereum chain security for this key part.
 
-Heimdall layer handles the aggregation of blocks produced by Bor into a merkle tree and publishing the merkle root periodically to the root chain. These periodic publishing are called **"checkpoints"**. For every few blocks on Bor, a validator (on the Heimdall layer): 
+Heimdall layer handles the aggregation of blocks produced by Bor into a merkle tree and publishing the merkle root periodically to the root chain. This periodic publishing is called **"checkpoint"**. For every few blocks on Bor, a validator (on the Heimdall layer): 
 
 1. Validates all the blocks since the last checkpoint
 2. Creates a merkle tree of the block hashes

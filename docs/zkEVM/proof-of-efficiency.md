@@ -102,5 +102,5 @@ An Aggregator receives all the transaction information from the Sequencer and se
 
 - An Aggregator's task is to provide validity proofs for the L2 transactions proposed by Sequencers.
 - In addition to running zkEVM's zkNode software, Aggregators need to have specialised hardware for creating the zero-knowledge validity proofs utilizing zkProver.
-- For a given batch or batches, an Aggregator that submits a validity proof first earns the $MATIC fee (which is being paid by the Sequencer(s) of the batch(es)).
+- For a given batch or batches, an Aggregator that submits a validity proof first earns the MATIC fee (which is being paid by the Sequencer(s) of the batch(es)).
 - The Aggregators need to indicate their intention to validate transactions. After that, they compete to produce validity proofs based on their own strategy.

@@ -32,7 +32,7 @@ The zkNode Architecture modular in nature. You can check out the diagram below f
 
 A **Sequencer** receives L2 transactions from the users, preprocesses them as a new L2 batch, and then proposes the batch to the PoE smart contract as a valid L2 transaction. The **Sequencer** receives **transactions from users** and will **receive all fees** from all published transactions. Sequencer is therefore economically incentivized to post valid transactions in order to profit the most from them. A **Transaction Pool** with a sorting algorithm to choose the most profitable transactions is often used to solve this.
 
-While publishing a series of transactions, the **Sequencer** must pay a **fee in $MATIC** tokens. This sum will change depending on the pending batches that need to be validated. If a sequencer shows malicious behavior by **posting invalid transactions** or **creating batches with just one transaction**, the protocol ensures that it will be very expensive to break the chain. This ensures that publishing invalid transactions will result in a loss for the sequencer.
+While publishing a series of transactions, the **Sequencer** must pay a **fee in MATIC** tokens. This sum will change depending on the pending batches that need to be validated. If a sequencer shows malicious behavior by **posting invalid transactions** or **creating batches with just one transaction**, the protocol ensures that it will be very expensive to break the chain. This ensures that publishing invalid transactions will result in a loss for the sequencer.
 
 Sequencers can be either **Trusted** or **Permissionless**:
 
@@ -48,7 +48,7 @@ To improve decentralization of the Polygon zkEVM, we allow permissionless sequen
 
 An **Aggregator** receives all the transaction information from the Sequencer and sends it to the **Prover** (or zkProver) which provides a byte-sized zk-Proof after complex polynomial computations. The Smart Contract validates this proof. This way, an **Aggregator** collects the data, sends it to the **Prover**, receives its output and finally, sends the information to the smart contract to verify that the **Validity Proof** from the **Prover** is correct.
 
-The **$MATIC** fee paid by the sequencers will be given to the aggregators. If the chain is overloaded with batches, the **$MATIC cost will increase**, which will better incentivize the aggregators to generate verifiable proofs. The total cost of running aggregators is calculated by two factors: L1 transaction cost, and Server costs (to be defined).
+The **MATIC** fee paid by the sequencers will be given to the aggregators. If the chain is overloaded with batches, the **MATIC cost will increase**, which will better incentivize the aggregators to generate verifiable proofs. The total cost of running aggregators is calculated by two factors: L1 transaction cost, and Server costs (to be defined).
 
 ## Synchronizer
 

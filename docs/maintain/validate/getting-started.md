@@ -23,7 +23,7 @@ Keep up with the latest node and validator updates from the Polygon team and the
 :::
 
 Validators are the key actor in maintaining the Polygon network. Validators run a full node and secure 
-the network by staking $MATIC to produce blocks, validate and participate in PoS consensus.
+the network by staking MATIC to produce blocks, validate and participate in PoS consensus.
 
 :::info
 

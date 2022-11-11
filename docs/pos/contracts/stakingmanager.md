@@ -48,7 +48,7 @@ function stakeFor(
 ) public;
 ```
 
-- Allows anyone with amount ($MATIC tokens) greater than `minDeposit`, if `currentValidatorSetSize` is less then `validatorThreshold`.
+- Allows anyone with amount (MATIC tokens) greater than `minDeposit`, if `currentValidatorSetSize` is less then `validatorThreshold`.
 - MUST transfer `amount+heimdallFee`, puts validator into auction period for an auctionInterval (more in Auction section).
 - `updateTimeLine` updates special timeline data structure, which keeps track of active validators and active stake for given epoch / checkpoint count.
 - One unique `NFT` is minted on each new stake / stakeFor call, which can be transferred to anyone but can be owned 1:1 Ethereum address.
@@ -204,5 +204,5 @@ Source: [StakingInfo.sol](https://github.com/maticnetwork/contracts/blob/develop
 Factory contract to deploy `ValidatorShare` contract for each validator who opt-in for delegation.
 
 :::note
-`jail`, `unJail` and `slash` function aren't used currently (part of slashing implementation).
+`jail`, `unJail` and `slash` functions aren't used currently (part of slashing implementation).
 :::

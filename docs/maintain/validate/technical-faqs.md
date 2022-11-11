@@ -220,7 +220,7 @@ You can run the following command to check it:
 
 Check the value of catching_up. If it is false then the node is all synced up.
 
-### 15. What if someone become a Top 10 staker, how he will receive his $MATIC reward at the end?
+### 15. What if someone becomes a Top 10 staker, how he will receive his MATIC reward at the end?
 
 Stage 1 rewards are not based on stake. Please refer to https://blog.matic.network/counter-stake-stage-1-stake-on-the-beach-full-details-matic-network/ for the reward details. Participants with high stake don't automatically qualify for a reward in this stage.
 
@@ -232,7 +232,7 @@ The correct version of Heimdall for stage 1 should be `heimdalld version is beta
 
 ### 17. What values should I add in the stake amount and fee amount?
 
-A minimum of 10 $MATIC tokens is required for the stake amount whereas heimdall fee should be greater than 10. For example, your stake amount is 400, then the heimdall fee should be 20. We suggest to keep the Heimdall fee as 20.
+A minimum of 10 MATIC tokens is required for the stake amount whereas heimdall fee should be greater than 10. For example, your stake amount is 400, then the heimdall fee should be 20. We suggest to keep the Heimdall fee as 20.
 
 However, please note that the values entered in stake amount and `heimdal-fee-amount` should be entered in 18 decimals.
 
@@ -240,7 +240,7 @@ For example,
 
     heimdallcli stake --staked-amount 400000000000000000000  --fee-amount 1000000000000000000 --validator 0xf8d1127780b89f167cb4578935e89b8ea1de774f
 
-### 18. Whats the difference between `~.heimdall` and `/etc/heimdall?`
+### 18. What's the difference between `~.heimdall` and `/etc/heimdall?`
 
 `~/.heimdall` is the heimdall dir when you use the binary installation method. `/etc/heimdall` is for the Linux package installation method.
 

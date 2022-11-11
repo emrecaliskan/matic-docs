@@ -35,7 +35,7 @@ A new validator can only join the active set when a currently active validator u
 
 :::
 
-To join the validator set, you must stake your $MATIC tokens. See [Validator Staking Operations](/docs/maintain/validate/validator-staking-operations).
+To join the validator set, you must stake your MATIC tokens. See [Validator Staking Operations](/docs/maintain/validate/validator-staking-operations).
 
 ## Unstake
 
@@ -45,7 +45,7 @@ To ensure good participation, the validator stake is locked for 80 checkpoints.
 
 ## Restake
 
-Validators can add more $MATIC tokens to their stake:
+Validators can add more MATIC tokens to their stake:
 
 * To earn more rewards.
 * To maintain the position in the validator set.

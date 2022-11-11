@@ -71,15 +71,15 @@ The two permissionless participants of the zkEVM network are: **Sequencers** and
 - **Sequencer**
    - Collect transactions and publish them in a batch
    - Receive fees from the published transactions
-   - Pay L1 transaction fees + $MATIC (depends on pending batches)
-   - $MATIC goes to Aggregators
-   - Profitable if: `txs fees` > `L1 call` + `$MATIC` fee
+   - Pay L1 transaction fees + MATIC (depends on pending batches)
+   - MATIC goes to Aggregators
+   - Profitable if: `txs fees` > `L1 call` + `MATIC` fee
 - **Aggregator**
    - Process transactions published by Sequencers
    - Build zkProof
-   - Receive $MATIC from Sequencer
+   - Receive MATIC from Sequencer
    - Static Cost: L1 call cost + Server cost (to build a proof)
-   - Profitable if: `$MATIC fee` > `L1 call` + `Server cost`
+   - Profitable if: `MATIC fee` > `L1 call` + `Server cost`
 
 ## [zkProver](/docs/zkEVM/architecture/zkProver)
 

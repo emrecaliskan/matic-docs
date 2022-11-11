@@ -99,7 +99,7 @@ To query all proposals:
 heimdallcli query gov proposals --trust-node
 ```
 
-To query particular proposal:
+To query a particular proposal:
 
 ```go
 heimdallcli query gov proposals 1 --trust-node

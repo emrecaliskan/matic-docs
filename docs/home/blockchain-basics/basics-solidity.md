@@ -15,7 +15,7 @@ image: https://wiki.polygon.technology/img/polygon-wiki.png
 
 Solidity is an object-oriented, high-level programming language for implementing smart contracts. It allows to write programs, which governs the behavior of accounts within the blockchain network. It is statically typed, supports contract inheritance and has many built-in Contract Libraries. Solidity is similar to programming languages like  C++, Python and JavaScript. 
 
-It comprises of: 
+It is comprised of: 
 - variables 
 - operators
 - loops 
