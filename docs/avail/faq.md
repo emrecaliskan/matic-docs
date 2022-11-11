@@ -19,7 +19,7 @@ slug: faq
 
 :::tip
 
-If you do not find your question on this page, please submit your question on the **[Polygon Avail Discord server](https://discord.gg/jXbK2DDeNt)**.
+If you do not find your question on this page, please submit your question on the **[<ins>Polygon Avail Discord server</ins>](https://discord.gg/jXbK2DDeNt)**.
 
 :::
 
